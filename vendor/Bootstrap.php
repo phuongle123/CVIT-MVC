@@ -12,19 +12,19 @@ class Bootstrap
 		$url = explode('/',$url);
 
 		if(empty($url[0])){
-			require_once 'controller/default/IndexController.php';
+			require_once 'controllers/default/IndexController.php';
 			$object_controller = new IndexController();
 			$object_controller->index();
 			return false;
 		} else {
 			$controller = ucfirst($url[0])."Controller";
 			$ctrlerPath = "";
-			if(file_exists("controller/default/".$controller.".php")){
-				$ctrlerPath = "controller/default/".$controller.".php";
-			} elseif(file_exists("controller/user/".$controller.".php")){
-				$ctrlerPath = "controller/user/".$controller.".php";
-			} elseif(file_exists("controller/admin/".$controller.".php")){
-				$ctrlerPath = "controller/admin/".$controller.".php";
+			if(file_exists("controllers/default/".$controller.".php")){
+				$ctrlerPath = "controllers/default/".$controller.".php";
+			} elseif(file_exists("controllers/users/".$controller.".php")){
+				$ctrlerPath = "controllers/users/".$controller.".php";
+			} elseif(file_exists("controllers/recruiters/".$controller.".php")){
+				$ctrlerPath = "controllers/recruiters/".$controller.".php";
 			} else {
 				$ctrlerPath = "";
 			}
