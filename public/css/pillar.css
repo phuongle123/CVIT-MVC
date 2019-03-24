@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.resume-social .fa-container {
+	background: none;
+	color: #fff;
+}
+.resume-header .name {
+	font-size: 2rem;
+}
+.resume-header a svg {
+	color: rgb(255, 255, 255,0.87);
+	margin-right: 4px;
+}
+.resume-social .fa-container svg {
+	color: rgb(255, 255, 255,0.87);
+}
+.resume-skills-cat {
+	font-size: 0.9rem;
+}
+footer.footer a.btn {
+	font-size: 16px;
+	padding: 4px 16px 4px 12px;
+	border-radius: 18px;
+	line-height: 26px;
+	border-color: rgb(0,0,0,0.12);
+	color: rgba(0,0,0,0.75);
+}
+
+footer.footer a.btn:hover {
+	background-color: rgba(0,0,0,0.1);
+}
+footer.footer a.btn svg {
+	margin-right: 8px;
+	font-size: 16px;
+	line-height: 26px;
+}
+@media (max-width: 767.98px) {
+	.resume-header {
+		height: 35rem;
+	}
+}
