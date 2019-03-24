@@ -39,7 +39,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit1.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-orbit1.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-orbit1.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
@@ -52,7 +52,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit2.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-orbit2.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-orbit2.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
@@ -65,7 +65,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit3.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-orbit3.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-orbit3.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
@@ -78,7 +78,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit4.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-orbit4.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-orbit4.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
@@ -91,7 +91,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar1.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-pillar1.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-pillar1.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
@@ -104,7 +104,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar2.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-pillar2.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-pillar2.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
@@ -117,7 +117,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar3.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-pillar3.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-pillar3.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
@@ -130,7 +130,7 @@
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar4.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
 							<p class="card-text editns">
-								<a href="cvfile-pillar4.html" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="cvfile-pillar4.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
 						</div>
 					</div> 
