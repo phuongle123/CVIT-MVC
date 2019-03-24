@@ -1,5 +1,5 @@
 <?php 
-DEFINE('INDEX_URL','http://localhost/CVIT_MVC/');
+DEFINE('INDEX_URL','http://localhost/CVIT-MVC/');
 
 DEFINE('DB_HOST','localhost');
 DEFINE('DB_USERNAME','root');
