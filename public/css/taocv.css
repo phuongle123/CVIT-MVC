@@ -126,6 +126,7 @@
 .contentitem {
     padding: 15px;
     display: block;
+    box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.20);
 }
 .contentitem img {
     width: 250px;
