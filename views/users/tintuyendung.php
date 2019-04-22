@@ -1,3 +1,9 @@
+<style>
+	a.btn.btn-primary.button.btn-block.btnapply {
+		width: 20%;
+		margin-bottom: 0px;
+	}
+</style>
 <main>
 		<div class="nd-chinh">
 			<div class="container">
@@ -18,7 +24,7 @@
 								<hr>
 								<div class="col-sm-12 text-center py-1">
 									<span>Bạn đã sẵn sàng apply chưa?</span>
-									<a class="btn btn-primary button btn-block btneditinfontd btnclick" >Apply</a>
+									<a class="btn btn-primary button btn-block btneditinfontd btnclick btnapply" >Apply</a>
 								</div> <!-- end button edit info -->
 							</div>
 							<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">

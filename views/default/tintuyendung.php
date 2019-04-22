@@ -8,11 +8,18 @@
 				<span class="kengang"></span>
 			</div>
 			<div class="col-md-12 dttd">
-				<h2 class="td">Tuyển dụng Dev lương cao</h2>
+
+				<?php
+				var_dump($data[0]);
+					for ($i=0; $i < count($data[0]); $i++) {
+				?>
+				<h2 class="td"><?php echo $data[0][$i]['id_tt'] ?></h2>
+				<h2 class="td"><?php echo $data[0][$i]['tieu_de'] ?></h2>
 				<p class="nd">
-					Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết Đây là nội dung chi tiết
+					<?php echo $data[0][$i]['noi_dung'] ?>
 				</p>
 				<hr>
+				<?php } ?>
 			</div>
 			</div> <!-- end dttd -->
 			<div class="col-md-4 ">
@@ -22,42 +29,23 @@
 							<h2>Danh sách tin đã đăng</h2>
 							<span class="kengang"></span>
 						</div>
-						<div class="col-md-12">
-							<ul class="content">
-								<li>
-									<i class="fa fa-angle-double-right"></i>
-									<a href="#">
-									Tuyển dụng Dev lương cao</a>
-								</li> <!-- end mottin tuyen dung -->
-								<li>
-									<i class="fa fa-angle-double-right"></i>
-									<a href="#">
-									Tuyển dụng Dev lương cao</a>
-								</li> <!-- end mottin tuyen dung -->
-								<li>
-									<i class="fa fa-angle-double-right"></i>
-									<a href="#">
-									Tuyển dụng Dev lương cao</a>
-								</li> <!-- end mottin tuyen dung -->
-								<li>
-									<i class="fa fa-angle-double-right"></i>
-									<a href="#">
-									Tuyển dụng Dev lương cao</a>
-								</li> <!-- end mottin tuyen dung -->
-								<li>
-									<i class="fa fa-angle-double-right"></i>
-									<a href="#">
-									Tuyển dụng Dev lương cao</a>
-								</li> <!-- end mottin tuyen dung -->
-								<li>
-									<i class="fa fa-angle-double-right"></i>
-									<a href="#">
-									Tuyển dụng Dev lương cao</a>
-								</li> <!-- end mottin tuyen dung -->
-							</ul>
-							<div class="btn-about">
-								<a  href="dstintuyendung-ntd.html">
-									Xem chi tiết <i class="fa fa-angle-double-right"></i></a>
+							<div class="col-md-12">
+								<ul class="content">
+									<?php
+										for ($i=0; $i < count($data[1]); $i++) {
+									?>
+									<li>
+										<i class="fa fa-angle-double-right"></i>
+										<a href="user/tintuyendung-tv.html">
+											<?php echo $data[1][$i]['tieu_de'] ?>
+										</a>
+									</li> <!-- end mottin tuyen dung -->
+									<?php
+										}
+									?>
+								</ul>
+								<div class="btn-about">
+									<a href="index/dstintuyendung">Xem chi tiết <i class="fa fa-angle-double-right"></i></a>
 								</div>
 							</div>
 						</div> <!-- end frame-out -->

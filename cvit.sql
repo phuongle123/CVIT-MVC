@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 15, 2018 lúc 06:07 AM
+-- Thời gian đã tạo: Th4 19, 2019 lúc 06:29 AM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 7.2.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `do-an-3`
+-- Cơ sở dữ liệu: `cvit`
 --
 
 -- --------------------------------------------------------
@@ -314,6 +314,20 @@ INSERT INTO `tt_ky_nang` (`id_tv`, `id_kn`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tt_ntd`
+--
+
+CREATE TABLE `tt_ntd` (
+  `ten_cong_ty` varchar(100) NOT NULL,
+  `dia_chi` varchar(100) NOT NULL,
+  `sdt` varchar(11) NOT NULL,
+  `id_ntd` int(11) NOT NULL,
+  `id_tt_ntd` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tt_so_thich`
 --
 
@@ -361,10 +375,10 @@ CREATE TABLE `tt_thanh_vien` (
 --
 
 INSERT INTO `tt_thanh_vien` (`id_tv`, `ngay_sinh`, `gioi_tinh`, `phone`, `website`, `quoc_tich`, `hinh_anh`, `mo_ta_ngan`, `id_user`, `id_chuyen_nganh`, `id_tinh`) VALUES
-(1, '1997-01-20', 0, 362323040, 'https://www.facebook.com/dangvui.123', 'Việt Nam', '../assets/img/2.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 8, 'HTTT', 1),
-(2, '1997-11-27', 0, 985236478, 'https://www.facebook.com/phithi.ngocminh', 'Việt Nam', '../assets/img/1.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 9, 'KHMT', 1),
-(3, '1997-01-21', 0, 376404446, 'https://www.facebook.com/lethidiemphuong0197', 'Việt Nam', '../assets/img/4.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 7, 'KTPM', 1),
-(4, '1997-09-19', 0, 962739775, 'https://www.facebook.com/kaitran19', 'Việt Nam', '../assets/img/1.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 6, 'KTPM', 1);
+(1, '1997-01-20', 0, 362323040, 'https://www.facebook.com/dangvui.123', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 8, 'HTTT', 1),
+(2, '1997-11-27', 0, 985236478, 'https://www.facebook.com/phithi.ngocminh', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 9, 'KHMT', 1),
+(3, '1997-01-21', 0, 376404446, 'https://www.facebook.com/lethidiemphuong0197', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 7, 'KTPM', 1),
+(4, '1997-09-19', 0, 962739775, 'https://www.facebook.com/kaitran19', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 6, 'KTPM', 1);
 
 -- --------------------------------------------------------
 
@@ -494,6 +508,13 @@ ALTER TABLE `tt_ky_nang`
   ADD KEY `id_kn` (`id_kn`);
 
 --
+-- Chỉ mục cho bảng `tt_ntd`
+--
+ALTER TABLE `tt_ntd`
+  ADD PRIMARY KEY (`id_tt_ntd`),
+  ADD KEY `id_ntd` (`id_ntd`);
+
+--
 -- Chỉ mục cho bảng `tt_so_thich`
 --
 ALTER TABLE `tt_so_thich`
@@ -587,6 +608,12 @@ ALTER TABLE `tinh_thanh`
   MODIFY `id_tinh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT cho bảng `tt_ntd`
+--
+ALTER TABLE `tt_ntd`
+  MODIFY `id_tt_ntd` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `tt_thanh_vien`
 --
 ALTER TABLE `tt_thanh_vien`
@@ -656,6 +683,12 @@ ALTER TABLE `kinh_nghiem`
 ALTER TABLE `tt_ky_nang`
   ADD CONSTRAINT `tt_ky_nang_ibfk_1` FOREIGN KEY (`id_tv`) REFERENCES `tt_thanh_vien` (`id_tv`),
   ADD CONSTRAINT `tt_ky_nang_ibfk_2` FOREIGN KEY (`id_kn`) REFERENCES `ky_nang` (`id_kn`);
+
+--
+-- Các ràng buộc cho bảng `tt_ntd`
+--
+ALTER TABLE `tt_ntd`
+  ADD CONSTRAINT `tt_ntd_ibfk_1` FOREIGN KEY (`id_ntd`) REFERENCES `user_ntd` (`id_ntd`);
 
 --
 -- Các ràng buộc cho bảng `tt_so_thich`

@@ -1,8 +1,4 @@
 <?php
-
-/**
-* 
-*/
 class Model
 {
 	protected $conn;
@@ -110,3 +106,5 @@ class Model
 		$this->conn = null;
 	}
 }
+?>
+

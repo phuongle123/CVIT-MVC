@@ -1,3 +1,4 @@
+
 	<main>
 		<div class="container-fluid banner">
 			<div class="row">
@@ -21,48 +22,19 @@
 							<h2>CV MỚI CẬP NHẬT</h2>
 							<span class="kengang"></span>
 						</div>
+							<?php
+					for ($i=0; $i < count($data[0]); $i++) {
+						?>
 						<div class="col-md-4 col-6 mot-tin">
 							<a href="#">
-								<img src="../../public/img/kai.jpg">
-								<h4>Nguyễn Văn A</h4>
-								<span>Kỹ thuật phần mềm</span>
+								<img src="<?php echo $data[0][$i]['hinh_anh'] ?>">
+								<h4><?php echo $data[0][$i]['ho_ten'] ?></h4>
+								<span><?php echo $data[0][$i]['ten_chuyen_nganh'] ?></span>
 							</a>
 						</div> <!-- hết mot-tin -->
-						<div class="col-md-4 col-6 mot-tin">
-							<a href="#">
-								<img src="../../public/img/kai.jpg">
-								<h4>Nguyễn Văn A</h4>
-								<span>Kỹ thuật phần mềm</span>
-							</a>
-						</div> <!-- hết mot-tin -->
-						<div class="col-md-4 col-6 mot-tin">
-							<a href="#">
-								<img src="../../public/img/kai.jpg">
-								<h4>Nguyễn Văn A</h4>
-								<span>Kỹ thuật phần mềm</span>
-							</a>
-						</div> <!-- hết mot-tin -->
-						<div class="col-md-4 col-6 mot-tin">
-							<a href="#">
-								<img src="../../public/img/kai.jpg">
-								<h4>Nguyễn Văn A</h4>
-								<span>Kỹ thuật phần mềm</span>
-							</a>
-						</div> <!-- hết mot-tin -->
-						<div class="col-md-4 col-6 mot-tin">
-							<a href="#">
-								<img src="../../public/img/kai.jpg">
-								<h4>Nguyễn Văn A</h4>
-								<span>Kỹ thuật phần mềm</span>
-							</a>
-						</div> <!-- hết mot-tin -->
-						<div class="col-md-4 col-6 mot-tin">
-							<a href="#">
-								<img src="../../public/img/kai.jpg">
-								<h4>Nguyễn Văn A</h4>
-								<span>Kỹ thuật phần mềm</span>
-							</a>
-						</div> <!-- hết mot-tin -->
+						<?php
+					}
+						?>
 					</div> <!-- end cv-moi -->
 					<div class="col-md-4 ">
 						<div class="sidebar">
@@ -73,42 +45,24 @@
 								</div>
 								<div class="col-md-12">
 									<ul class="content">
+										<?php
+											for ($i=0; $i < count($data[1]); $i++) {
+										?>
 										<li>
 											<i class="fa fa-angle-double-right"></i>
 											<a href="user/tintuyendung-tv.html">
-											Tuyển dụng Dev lương cao</a>
+												<?php echo $data[1][$i]['tieu_de'] ?>
+											</a>
 										</li> <!-- end mottin tuyen dung -->
-										<li>
-											<i class="fa fa-angle-double-right"></i>
-											<a href="user/tintuyendung-tv.html">
-											Tuyển dụng Dev lương cao</a>
-										</li> <!-- end mottin tuyen dung -->
-										<li>
-											<i class="fa fa-angle-double-right"></i>
-											<a href="user/tintuyendung-tv.html">
-											Tuyển dụng Dev lương cao</a>
-										</li> <!-- end mottin tuyen dung -->
-										<li>
-											<i class="fa fa-angle-double-right"></i>
-											<a href="user/tintuyendung-tv.html">
-											Tuyển dụng Dev lương cao</a>
-										</li> <!-- end mottin tuyen dung -->
-										<li>
-											<i class="fa fa-angle-double-right"></i>
-											<a href="user/tintuyendung-tv.html">
-											Tuyển dụng Dev lương cao</a>
-										</li> <!-- end mottin tuyen dung -->
-										<li>
-											<i class="fa fa-angle-double-right"></i>
-											<a href="user/tintuyendung-tv.html">
-											Tuyển dụng Dev lương cao</a>
-										</li> <!-- end mottin tuyen dung -->
+										<?php
+											}
+										?>
 									</ul>
 									<div class="btn-about">
-										<a  href="user/dstintuyendung-tv.html">
+										<a href="index/dstintuyendung/">
 											Xem chi tiết <i class="fa fa-angle-double-right"></i></a>
-										</div>
 									</div>
+								</div>
 								</div> <!-- end frame-out -->
 							</div> <!-- end sidebar -->
 						</div>
@@ -116,6 +70,4 @@
 				</div>
 
 			</div>
-
-		
 		</main> <!-- main -->

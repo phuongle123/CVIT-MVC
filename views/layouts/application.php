@@ -6,7 +6,8 @@
 	<!-- Responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>CVIT</title>
-	<link rel="icon" href="../../public/img/favicon-logo.png">
+	<base href="/CVIT-MVC/">
+	<link rel="icon" href="public/img/favicon-logo.png">
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=vietnamese" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=vietnamese" rel="stylesheet">
@@ -18,7 +19,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" href="../../public/css/style.css">
+	<link rel="stylesheet" href="public/css/style.css">
 	<style>
 	*{
 		padding: 0;
@@ -34,11 +35,6 @@
 	.tab-content a.btn {
 		padding: 5px;
 		width: 17%;
-	}
-
-	a.btn.btn-primary.button.btn-block {
-		width: 20%;
-		margin-bottom: 0px;
 	}
 
 	p.nd {
@@ -84,7 +80,7 @@
 				<div class="col-md-12">
 					<div class="dn choose">
 						<a class="clickout"><i class="fa fa-close"></i></a>
-						<a href="index.php" class="logo"><img src="../../public/img/logo.png" alt=""></a>
+						<a href="index.php" class="logo"><img src="public/img/logo.png" alt=""></a>
 						<h4>ĐĂNG NHẬP</h4>
 						<a id="dangnhaptd" class="btn btn-primary button btn-block">Nhà tuyển dụng</a>
 						<a id="dangnhaptv" class="btn btn-primary button btn-block">Thành viên</a>
@@ -101,7 +97,7 @@
 					<div class="dn">
 						<a class="clickout"><i class="fa fa-close"></i></a>
 						<a href="index.php" class="logo">
-							<img src="../../public/img/logo.png" alt="">
+							<img src="public/img/logo.png" alt="">
 						</a>
 						<h6>( Dành cho Nhà tuyển dụng )</h6>
 						<form action="../controller/xuly_login_ntd.php" method="POST">
@@ -132,8 +128,8 @@
 				<div class="col-md-12">
 					<div class="dn">
 						<a class="clickout"><i class="fa fa-close"></i></a>
-						<a href="index.html" class="logo">
-							<img src="../../public/img/logo.png" alt="">
+						<a href="index.php" class="logo">
+							<img src="public/img/logo.png" alt="">
 						</a>
 						<h6>( Dành cho Thành viên )</h6>
 						<form action="../controller/xuly_login_tv.php" method="POST">
@@ -164,7 +160,7 @@
 				<div class="col-md-12">
 					<div class="dn choose">
 						<a class="clickout"><i class="fa fa-close"></i></a>
-						<a href="index.php" class="logo"><img src="../../public/img/logo.png" alt=""></a>
+						<a href="index.php" class="logo"><img src="public/img/logo.png" alt=""></a>
 						<h4>ĐĂNG KÝ</h4>
 						<a id="dangkytd" class="btn btn-primary button btn-block">Nhà tuyển dụng</a>
 						<a id="dangkytv" class="btn btn-primary button btn-block">Thành viên</a>
@@ -245,25 +241,13 @@
 									<div class="form-group">
 										<select class="form-control" name="ten_tinh">
 											<option selected="">Tỉnh thành..</option>
-											<?php 
-											$query = "select * from tinh_thanh";
-											$result =mysqli_query($connect,$query);
-											foreach ($result as  $value) {
-											?>
-											<option value="<?php echo $value['id_tinh'] ?>"><?php echo $value['ten_tinh']; ?></option>
-											<?php }?>
+											<option value=""></option>
 										</select>
 									</div>
 									<div class="form-group">
 										<select class="form-control" name="ten_chuyen_nganh">
 											<option selected="">Chọn chuyên ngành..</option>
-											<?php
-											$query = "select * from chuyen_nganh";
-											$result =mysqli_query($connect,$query);
-											foreach ($result as  $value) {
-											?>
-											<option value="<?php echo $value['id_chuyen_nganh'] ?>"><?php echo $value['ten_chuyen_nganh']; ?></option>
-											<?php } ?>
+											<option value=""></option>
 										</select>
 									</div>
 									<div class="form-group us">
@@ -297,7 +281,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-12">
-					<a href="index.php" class="logo-main"><img src="../../public/img/logo.png" alt="" class=""></a>
+					<a href="index.php" class="logo-main"><img src="public/img/logo.png" alt="" class=""></a>
 				</div>
 				<div class="col-md-7">
 					<form class="example form-search" action="action_page.php">
@@ -306,26 +290,15 @@
 							<div class="icon-map"><i class="fa fa-map-marker"></i></div>
 							<select id="inputState" class="form-control">
 								<option selected>Tất cả địa điểm </option>
-								<?php
-								$query = "select * from tinh_thanh";
-								$result =mysqli_query($connect,$query);
-								foreach ($result as  $value) {
-								?>
-								<option><?php echo $value['ten_tinh'];?></option>
-								<?php }?>
+								<option></option>
+								
 							</select>
 						</div>
 						<div class="form-group fl cn">
 							<div class="icon-map"><i class="fa fa-graduation-cap"></i></div>
 							<select id="inputState" class="form-control ">
 								<option selected>Tất cả chuyên ngành </option>
-								<?php
-								$query = "select * from chuyen_nganh";
-								$result =mysqli_query($connect,$query);
-								foreach ($result as  $value) {
-								?>
-								<option><?php echo $value['ten_chuyen_nganh'];?></option>
-								<?php }?>
+								<option></option>
 							</select>
 						</div>
 						<button type="submit"><i class="fa fa-search"></i></button>
@@ -344,7 +317,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-12">
-					<a href="index.html" class="logo-main"><img src="../../public/img/logo.png" alt="" class=""></a>
+					<a href="index.html" class="logo-main"><img src="public/img/logo.png" alt="" class=""></a>
 				</div>
 				<div class="col-md-7">
 					<form class="example form-search" action="action_page.php">
@@ -379,7 +352,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="../../public/js/login.js"></script>
+		<script src="public/js/login.js"></script>
 	</header> <!-- end header background - mobile -->
 
 	<nav class="navbar navbar-expand-lg navbar-dark menu-dad">
@@ -395,7 +368,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent1">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item">
-								<a class="nav-link home-link" href="index.html"><i class="fa fa-home"></i>TRANG CHỦ</a>
+								<a class="nav-link home-link" href="index.php"><i class="fa fa-home"></i>TRANG CHỦ</a>
 							</li>
 							<li class="nav-item cn">
 								<a class="nav-link" href="#chuyennganh-con" data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="collapseExample">CHUYÊN NGÀNH <i class="fa fa-caret-down "></i></a>
@@ -439,8 +412,7 @@
 			</div>
 		</div>
 	</nav> <!--nav -->
-
-	<?php include'../default/tintuyendung.php'; ?>
+	<?php echo $content; ?>
 		<footer>
 			<div class="map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6394766892454!2d105.7657168144546!3d10.04657927498789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0880f08006ffb%3A0x9a745510330faf4e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBL4bu5IHRodeG6rXQgLSBDw7RuZyBuZ2jhu4cgQ-G6p24gVGjGoQ!5e0!3m2!1svi!2s!4v1538297409128" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -501,4 +473,5 @@
 			</div> <!-- end footer-bottom -->
 		</footer> <!-- end footer -->
 	</body>
+
 	</html>
