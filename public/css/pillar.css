@@ -28,6 +28,9 @@ footer.footer a.btn {
 	border-color: rgb(0,0,0,0.12);
 	color: rgba(0,0,0,0.75);
 }
+.resume-header .picture {
+    height: 100%;
+}
 
 footer.footer a.btn:hover {
 	background-color: rgba(0,0,0,0.1);

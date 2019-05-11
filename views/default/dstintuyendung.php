@@ -1,3 +1,5 @@
+<?php include "header.php"; ?>
+<?php include "navbar.php"; ?>
 <main>
 	<div class="nd-chinh">
 		<div class="container">
@@ -33,3 +35,4 @@
 		</div>  <!-- end container -->
 	</div> <!-- end nd-chinh -->
 </main><!-- main -->
+<?php include "footer.php"; ?>

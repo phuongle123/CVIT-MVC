@@ -27,7 +27,7 @@
 	</style>
 </head> <!-- end head -->
 <body class="edit-cv ">
-	<div class="why">
+	<div class="why update-cv">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 title text-center py-1">
@@ -60,6 +60,9 @@
 										<div class="phan-5">
 											<div class="container">
 												<div class="row">
+													<?php
+															for ($i=0; $i < count($data[0]); $i++) {
+															?>
 													<div class="col-md-12 tieu-de">
 														<h2>Cập nhật ảnh đại diện</h2>
 													</div>
@@ -70,8 +73,9 @@
 																	<label for="exampleFormControlFile1"><i class="fa fa-camera" name="image"></i> Cập nhật ảnh đại diện</label>
 																	<input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
 																</div>
+
 															</div> <!-- end update-avatar -->
-															<img src="" alt="">
+															<img src="../../<?php echo $data[0][$i]['hinh_anh']?>" alt="">
 															<script>
 																$("body").on("change", ".form-control-file", function(){
 																	var ready = new FileReader();
@@ -83,13 +87,13 @@
 															</script>
 														</div>
 													</div>
-
 													<div class="col-md-12">
 														<center>
-															<button name="dai_dien" type="submit" class="btn btn-success" >Cập nhật</button>
-															<a href="trangcv_canhan.php?id_tv=<?php echo $document['id_tv']; ?>" class="btn btn-info" >Trang CV</a>
+															<button name="dai_dien" type="submit" class="btn btn-success" > <i class="fa fa-edit"></i>Cập nhật</button>
+															<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
 														</center>					
 													</div>
+													<?php } ?>
 												</div>
 											</div>
 										</div> <!-- 5 -->
@@ -97,11 +101,14 @@
 								</form>
 							</li>
 							<li class="content1">
-								<form action="../controller/gioi_thieu.php?id_tv=<?php echo $document['id_tv'];?>" method="POST">
+								<form action="../../updateuser/info" method="POST">
 									<div class="contentitem">
 										<div class="phan-5">
 											<div class="container">
 												<div class="row">
+													<?php
+																for ($i=0; $i < count($data[0]); $i++) {
+															?>
 													<div class="col-md-12 tieu-de">
 														<h2>THÔNG TIN CÁ NHÂN</h2>
 													</div>
@@ -111,37 +118,37 @@
 																<tr>
 																	<th>Ngày sinh</th>
 																	<td>
-																		<input name="ngay_sinh" type="text" value="ngay_sinh">
+																		<input name="ngay_sinh" type="text" value="<?php echo $data[0][$i]['ngay_sinh'] ?>">
 																	</td>
 																</tr> <!-- hết 1 row -->
 																<tr>
 																	<th>Giới tính</th>
 																	<td>
-																		<input name="gioi_tinh" type="text" value="['gioi_tinh']">
+																		<input name="gioi_tinh" type="text" value="<?php echo $data[0][$i]['gioi_tinh']?>">
 																	</td>
 																</tr> <!-- hết 1 row -->
 																<tr>
 																	<th>Phone</th>
 																	<td>
-																		<input name="phone" type="text" value="['phone']">
+																		<input name="phone" type="text" value="<?php echo $data[0][$i]['phone'] ?>">
 																	</td>
 																</tr> <!-- hết 1 row -->
 																<tr>
 																	<th>Quốc tịch</th>
 																	<td>
-																		<input name="quoc_tich" type="text" value="['quoc_tich']">
+																		<input name="quoc_tich" type="text" value="<?php echo $data[0][$i]['quoc_tich'] ?>">
 																	</td>
 																</tr> <!-- hết 1 row -->
 																<tr>
 																	<th>Mô tả ngắn</th>
 																	<td>
-																		<textarea name="mo_ta_ngan">['mo_ta_ngan']</textarea>
+																		<textarea name="mo_ta_ngan"><?php echo $data[0][$i]['mo_ta_ngan'] ?></textarea>
 																	</td>
 																</tr> <!-- hết 1 row -->
 																<tr>
 																	<th>Website </th>
 																	<td>
-																		<input name="website" type="text" value="['website']">
+																		<input name="website" type="text" value="<?php echo $data[0][$i]['website'] ?>">
 																	</td>
 																</tr> <!-- hết 1 row -->
 															</tbody>
@@ -150,10 +157,12 @@
 
 													<div class="col-md-12">
 														<center>
-															<button name="update_gioi_thieu" type="submit" class="btn btn-success" >Cập nhật</button>
-															<a href="trangcv_canhan.php?id_tv=<?php echo $document['id_tv']; ?>" class="btn btn-info" >Trang CV</a>
+															<button name="update_gioi_thieu" type="submit" class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</button>
+															<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
+															
 														</center>					
 													</div>
+													<?php } ?>
 												</div>
 											</div>
 										</div> <!-- 5 -->
@@ -161,10 +170,14 @@
 								</form>
 								</li>
 									<li class="content1">
+										<form action="../../updateuser/hocvan" method="POST">
 										<div class="contentitem">
 											<div class="phan-5">
 												<div class="container">
 													<div class="row">
+														<?php
+																for ($i=0; $i < count($data[1]); $i++) {
+															?>
 														<div class="col-md-12 tieu-de">
 															<h2>TRÌNH ĐỘ HỌC VẤN</h2>
 														</div>
@@ -174,7 +187,7 @@
 																	<tr>
 																		<th>Năm học</th>
 																		<td>
-																			<input type="text" value="2018">
+																			<input type="text" value="<?php echo $data[1][$i]['time'] ?>" name ="time_hv">
 																		</td>
 																	</p>
 																</td>
@@ -182,13 +195,13 @@
 															<tr>
 																<th>Tên nơi học</th>
 																<td>
-																	<input type="text" value="Trường..">
+																	<input type="text" value="<?php echo $data[1][$i]['noi_hoc'] ?>" name="noi_hoc">
 																</td>
 															</tr> <!-- hết 1 row -->
 															<tr>
 																<th>Ghi chú</th>
 																<td>
-																	<input type="text" value="...">
+																	<input type="text" value="<?php echo $data[1][$i]['chi_tiet'] ?>" name="chi_tiet">
 																</td>
 															</tr> <!-- hết 1 row -->
 														</tbody>
@@ -197,19 +210,28 @@
 
 												<div class="col-md-12">
 													<center>
-														<button class="btn btn-success" >Thêm thông tin</button>
+														
+														<button class="btn btn-success" > <i class="fa fa-edit"></i>Cập nhật</button>
+														<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
+													
 													</center>					
 												</div>
+											<?php } ?>
 											</div>
 										</div>
 									</div> <!-- 5 -->
 								</div> <!-- end contentitem -->
+							</form>
 							</li>
 							<li class="content2">
+								<form action="../../updateuser/chungchi" method="POST">
 								<div class="contentitem">
 									<div class="phan-5">
 										<div class="container">
 											<div class="row">
+												<?php
+													for ($i=0; $i < count($data[2]); $i++) {
+												?>
 												<div class="col-md-12 tieu-de">
 													<h2>CHỨNG CHỈ</h2>
 												</div>
@@ -219,7 +241,7 @@
 															<tr>
 																<th>Năm học</th>
 																<td>
-																	<input type="text" value="2018">
+																	<input type="text" name="time_cc" value="<?php echo $data[2][$i]['time'] ?>">
 																</td>
 															</p>
 														</td>
@@ -227,7 +249,7 @@
 													<tr>
 														<th>Tên chứng chỉ</th>
 														<td>
-															<input type="text" value="Chứng chỉ tin học..">
+															<input type="text" name="ten_chung_chi" value="<?php echo $data[2][$i]['ten_chung_chi'] ?>">
 														</td>
 													</tr> <!-- hết 1 row -->
 												</tbody>
@@ -235,19 +257,26 @@
 										</div>
 										<div class="col-md-12">
 											<center>
-												<button class="btn btn-success" >Thêm thông tin</button>
+												<button class="btn btn-success" > <i class="fa fa-edit"></i>Cập nhật</button>
+												<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
 											</center>					
 										</div>
+									<?php } ?>
 									</div>
 								</div>
 							</div> <!-- 5 -->
 						</div> <!-- end contentitem -->
+					</form>
 					</li>
 					<li class="content3">
+						<form action="../../updateuser/giaithuong" method="POST">
 						<div class="contentitem">
 							<div class="phan-5">
 								<div class="container">
 									<div class="row">
+										<?php
+											for ($i=0; $i < count($data[3]); $i++) {
+										?>
 										<div class="col-md-12 tieu-de">
 											<h2>GIẢI THƯỞNG</h2>
 										</div>
@@ -257,7 +286,7 @@
 													<tr>
 														<th>Thời gian</th>
 														<td>
-															<input type="text" value="2018">
+															<input type="text" name="time_gt" value="<?php echo $data[3][$i]['time'] ?>">
 														</td>
 													</p>
 												</td>
@@ -265,7 +294,7 @@
 											<tr>
 												<th>Tên giải thưởng</th>
 												<td>
-													<input type="text" value="Học bổng..">
+													<input type="text" name="ten_giai_thuong" value="<?php echo $data[3][$i]['ten_giai_thuong'] ?>">
 												</td>
 											</tr> <!-- hết 1 row -->
 										</tbody>
@@ -273,19 +302,26 @@
 								</div>
 								<div class="col-md-12">
 									<center>
-										<button class="btn btn-success" >Thêm thông tin</button>
+										<button class="btn btn-success" > <i class="fa fa-edit"></i>Cập nhật</button>
+										<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
 									</center>					
 								</div>
+							<?php } ?>
 							</div>
 						</div>
 					</div> <!-- 5 -->
 				</div> <!-- end contentitem -->
+			</form>
 			</li>
 			<li class="content4">
+				<form action="../../updateuser/hoatdong" method="POST">
 				<div class="contentitem">
 					<div class="phan-5">
 						<div class="container">
 							<div class="row">
+								<?php
+									for ($i=0; $i < count($data[4]); $i++) {
+								?>
 								<div class="col-md-12 tieu-de">
 									<h2>HOẠT ĐỘNG</h2>
 								</div>
@@ -295,7 +331,7 @@
 											<tr>
 												<th>Thời gian</th>
 												<td>
-													<input type="text" value="2018">
+													<input type="text" name="time_hd" value="<?php echo $data[4][$i]['time'] ?>">
 												</td>
 											</p>
 										</td>
@@ -303,13 +339,13 @@
 									<tr>
 										<th>Tên hoạt động</th>
 										<td>
-											<input type="text" value="Nhóm tình nguyện hè..">
+											<input type="text" name="ten_hoat_dong" value="<?php echo $data[4][$i]['ten_hoat_dong'] ?>">
 										</td>
 									</tr> <!-- hết 1 row -->
 									<tr>
 										<th>Ghi chú</th>
 										<td>
-											<input type="text" value="...">
+											<input type="text" name="noi_dung" value="<?php echo $data[4][$i]['noi_dung'] ?>">
 										</td>
 									</tr> <!-- hết 1 row -->
 								</tbody>
@@ -318,92 +354,113 @@
 
 						<div class="col-md-12">
 							<center>
-								<button class="btn btn-success" >Thêm thông tin</button>
+								<button class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</button>
+								<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
 							</center>					
 						</div>
+					<?php } ?>
 					</div> <!-- 5 -->
 				</div> <!-- end contentitem -->
+	</form>
 			</li>
+
 			<li class="content4">
-				<div class="contentitem">
-					<div class="phan-5">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12 tieu-de">
-									<h2>SỞ THÍCH</h2>
-								</div>
-								<div class="col-md-12 taocv-st">
-									<div class="form-group fl td ">
-										<div class="icon-map"><i class="fa fa-graduation-cap"></i></div>
-										<select id="inputState" class="form-control">
-											<option selected>Chọn kỹ năng</option>
-											<option>Thuyết trình</option>
-											<option>Giao tiếp</option>
-											<option>Tiếng Anh</option>
-											<option>HTML</option>
-											<option>CSS</option>
-											<option>Javascript</option>
-											<option>PHP</option>
-											<option>MYSQL</option>
-											<option>JAVA</option>
-											<option>C#</option>
-											<option>C++</option>
-											<option>Wordpress</option>		
+		<form action="../controller/update_so_thich.php?id_tv=<?php echo $document['id_tv'];?>" method="POST">
+		<div class="contentitem">
+			<div class="phan-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 tieu-de">
+							<h2>SỞ THÍCH</h2>
+						</div>
+						<div class="col-md-12 taocv-st">
+							<div class="form-group fl td ">
+								<div class="icon-map"></div>
+								<?php
+									for ($i=0; $i < count($data[5]); $i++) {
+								?>
+           							 <p class="td stk">
+           							 	<input name="ten_so_thich" type="text" placeholder="" value="<?php echo $data[5][$i]['ten_so_thich'];?>">
+           							 	<a href="" class="btn btn-info">Xóa</a>
+           							 </p>
+           						 <?php } ?>
+           							<p>
+           						 		<select id="inputState" class="form-control" name="ten_so_thich">
+											<option selected="">Chọn sở thích..</option>
+											<?php  ?>
+											<option value="<?php echo $value['id_so_thich'] ?>"><?php echo $value['ten_so_thich']; ?></option>
+											<?php  ?>
 										</select>
-									</div>
-									<span class="td stk"><input type="text" placeholder="Kỹ năng khác.." value=""></span> 		
-								</div>
-								<div class="col-md-12">
-									<center>
-										<button class="btn btn-success" >Thêm thông tin</button>
-									</center>					
-								</div>
-							</div>
-						</div> <!-- 5 -->
-					</div> <!-- end contentitem -->
-				</li>
-				<li class="content4">
-					<div class="phan-5">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12 tieu-de">
-									<h2>KỸ NĂNG</h2>
-								</div>
-								<div class="col-md-12 taocv-st">
-									<div class="form-group fl td ">
-										<div class="icon-map"><i class="fa fa-graduation-cap"></i></div>
-										<select id="inputState" class="form-control">
-											<option selected>Chọn kỹ năng</option>
-											<option>Thuyết trình</option>
-											<option>Giao tiếp</option>
-											<option>Tiếng Anh</option>
-											<option>HTML</option>
-											<option>CSS</option>
-											<option>Javascript</option>
-											<option>PHP</option>
-											<option>MYSQL</option>
-											<option>JAVA</option>
-											<option>C#</option>
-											<option>C++</option>
-											<option>Wordpress</option>		
+										<button name="add_so_thich" type="submit" class="btn btn-info">Thêm</button>
+           							</p>
+           						 	
+							</div> 		
+						</div>
+						<div class="col-md-12">
+							<center>
+								<button class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</button>
+								<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
+							</center>					
+						</div>
+					</div>
+				</div> <!-- 5 -->
+			</div> <!-- end contentitem -->
+		</div>
+	</form>
+		</li>
+			<li class="content4">
+		<form action="../controller/update_so_thich.php?id_tv=<?php echo $document['id_tv'];?>" method="POST">
+		<div class="contentitem">
+			<div class="phan-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 tieu-de">
+							<h2>KỸ NĂNG</h2>
+						</div>
+						<div class="col-md-12 taocv-st">
+							<div class="form-group fl td ">
+								<div class="icon-map"></div>
+								<?php
+									for ($i=0; $i < count($data[6]); $i++) {
+								?>
+           							 <p class="td stk">
+           							 	<input name="ten_so_thich" type="text" placeholder="" value="<?php echo $data[6][$i]['ten_ky_nang'];?>">
+           							 	<a href="" class="btn btn-info">Xóa</a>
+           							 </p>
+           						 <?php } ?>
+           							<p>
+           						 		<select id="inputState" class="form-control" name="ten_so_thich">
+											<option selected="">Chọn sở thích..</option>
+											<?php  ?>
+											<option value="<?php echo $value['id_so_thich'] ?>"><?php echo $value['ten_so_thich']; ?></option>
+											<?php  ?>
 										</select>
-									</div>
-									<span class="td stk"><input type="text" placeholder="Kỹ năng khác.." value=""></span> 		
-								</div>
-								<div class="col-md-12">
-									<center>
-										<button class="btn btn-success" >Thêm thông tin</button>
-									</center>					
-								</div>
-							</div>
-						</div> <!-- 5 -->
-					</div> <!-- end contentitem -->
-				</li>
+										<button name="add_so_thich" type="submit" class="btn btn-info">Thêm</button>
+           							</p>
+           						 	
+							</div> 		
+						</div>
+						<div class="col-md-12">
+							<center>
+								<button class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</button>
+								<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
+							</center>					
+						</div>
+					</div>
+				</div> <!-- 5 -->
+			</div> <!-- end contentitem -->
+		</div>
+	</form>
+		</li>
 				<li class="content4">
+					<form action="../../updateuser/kinhnghiem" method="POST">
 					<div class="contentitem">
 						<div class="phan-5">
 							<div class="container">
 								<div class="row">
+									<?php
+										for ($i=0; $i < count($data[7]); $i++) {
+									?>
 									<div class="col-md-12 tieu-de">
 										<h2>KINH NGHIỆM</h2>
 									</div>
@@ -413,7 +470,7 @@
 												<tr>
 													<th>Thời gian</th>
 													<td>
-														<input type="text" value="2018">
+														<input type="text" name="time_kn" value="<?php echo $data[7][$i]['time'] ?>">
 													</td>
 												</p>
 											</td>
@@ -421,13 +478,13 @@
 										<tr>
 											<th>Tên kinh nghiệm</th>
 											<td>
-												<input type="text" value="Thực tập thực tế..">
+												<input type="text" name="noi_lam" value="<?php echo $data[7][$i]['noi_lam'] ?>">
 											</td>
 										</tr> <!-- hết 1 row -->
 										<tr>
 											<th>Ghi chú</th>
 											<td>
-												<input type="text" value="...">
+												<input type="text" name="chi_tiet" value="<?php echo $data[7][$i]['chi_tiet'] ?>">
 											</td>
 										</tr> <!-- hết 1 row -->
 									</tbody>
@@ -436,19 +493,26 @@
 
 							<div class="col-md-12">
 								<center>
-									<button class="btn btn-success" >Thêm thông tin</button>
+									<button class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</button>
+									<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
 								</center>					
 							</div>
+						<?php } ?>
 						</div>
 					</div>
 				</div> <!-- 5 -->
 			</div> <!-- end contentitem -->
+		</form>
 		</li>
 		<li class="content4">
+			<form action="../../updateuser/duan" method="POST">
 			<div class="contentitem">
 				<div class="phan-5">
 					<div class="container">
 						<div class="row">
+							<?php
+								for ($i=0; $i < count($data[8]); $i++) {
+							?>
 							<div class="col-md-12 tieu-de">
 								<h2>DỰ ÁN</h2>
 							</div>
@@ -456,25 +520,33 @@
 								<table class="table table-bordered w-75 m-auto">
 									<tbody>
 										<tr>
+											<th>Tên dự án</th>
+												<td><input type="text" value="<?php echo $data[8][$i]['ten_du_an'] ?>" name="ten_du_an"></td>		
+											</tr> <!-- hết 1 row -->
+										<tr>
+											<th>Thời gian</th>
+												<td><input type="text" value="<?php echo $data[8][$i]['time'] ?>" name="time_da"></td>
+										</tr> <!-- hết 1 row -->
+											<tr>
 											<th>Mô tả</th>
 											<td>
-												<textarea name="">- Ứng dụng mobile giúp mọi người đặt vé nhanh chóng bất kì lúc nào, bất kì nơi đâu.
+												<textarea name="mo_ta"><?php echo $data[8][$i]['mo_ta'] ?>
 												</textarea>
 											</p>
 										</td>
 									</tr> <!-- hết 1 row -->
 									<tr>
 										<th>Số lượng thành viên</th>
-										<td><input type="text" value="8"></td>
+										<td><input type="text" name="so_luong" value="<?php echo $data[8][$i]['so_luong'] ?>"></td>
 									</tr> <!-- hết 1 row -->
 									<tr>
 										<th>Vị trí trong công việc</th>
-										<td><input type="text" value="- Lập trình viên"></td>
+										<td><input type="text" name="vi_tri_cong_viec" value="<?php echo $data[8][$i]['vi_tri_cong_viec'] ?>"></td>
 									</tr> <!-- hết 1 row -->
 									<tr>
 										<th>Vai trò trong dự án</th>
 										<td>
-											<textarea name="">- Phân tích và thiết kế hệ thống, phát triển module, tối ưu code, sửa lỗi
+											<textarea name="vai_tro"><?php echo $data[8][$i]['vai_tro'] ?>
 											</textarea>
 										</p>
 									</td>
@@ -482,7 +554,7 @@
 								<tr>
 									<th>Công nghệ sử dụng</th>
 									<td>
-										<textarea name="">- Android Studio 1.4, Java, Android 4.0, Google Could Message.
+										<textarea name="cong_nghe"><?php echo $data[8][$i]['cong_nghe'] ?>
 										</textarea>
 									</td>
 								</tr> <!-- hết 1 row -->
@@ -492,13 +564,16 @@
 
 					<div class="col-md-12">
 						<center>
-							<button class="btn btn-success" >Thêm thông tin</button>
+							<button class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</button>
+							<a href="../viewinfo/<?php echo $_SESSION['user']['id_tv']  ?>" class="btn btn-info" ><i class="fa fa-address-card-o"></i>Trang CV</a>
 						</center>					
 					</div>
+				<?php } ?>
 				</div>
 			</div>
 		</div> <!-- 5 -->
 	</div> <!-- end contentitem -->
+</form>
 </li>
 </ul>
 </div> <!-- end tabcontent -->

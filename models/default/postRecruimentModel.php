@@ -2,7 +2,6 @@
 
 class postRecruimentModel extends Model
 {
-	/*private $masp, $tensp, $gia;*/
 	function __construct()
 	{
 		parent::__construct();
@@ -16,12 +15,8 @@ class postRecruimentModel extends Model
 		return $posts;
 	}
 	function getPostsById($id_tt){
-		$sql = "SELECT * FROM dang_tt WHERE id_tt = ".$id_tt;
-		$post = array();
-		foreach($this->conn->query($sql) as $row){
-			$post = $row;
-		}
-		return $post;
+		$posts = $this->select('*', 'dang_tt,user_ntd, tt_ntd','tt_ntd.id_ntd=user_ntd.id_ntd and user_ntd.id_ntd=dang_tt.id_ntd and dang_tt.id_tt = '.$id_tt, null);
+		return $posts;
 	}
 
 }

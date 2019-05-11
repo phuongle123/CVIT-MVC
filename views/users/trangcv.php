@@ -28,10 +28,14 @@
 		<img src="../../public/img/3.jpg" alt="" class="layer-1">
 		<div class="layer-2"></div>
 		<div class="layer-3">
+			<?php
+				for ($i=0; $i < count($data[0]); $i++) {
+			?>
 			<i class="fa fa-graduation-cap" style="font-size:80px;"></i>
-			<h2>LÊ THỊ DIỄM PHƯỢNG</h2>
-			<h1>KỸ THUẬT PHẦN MỀM</h1>
-			<p>Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.</p>
+			<h2><?php echo $data[0][$i]['ho_ten'] ?></h2>
+			<h1><?php echo $data[0][$i]['ten_chuyen_nganh'] ?></h1>
+			<p><?php echo $data[0][$i]['mo_ta_ngan'] ?></p>
+		<?php } ?>
 		</div>
 	</div> <!-- hết phan-1 -->
 	<div class="phan-2">
@@ -40,21 +44,33 @@
 				<div class="col-md-12 tieu-de">
 					<h2>Giới thiệu về tôi</h2>
 				</div>
+				<?php
+						for ($i=0; $i < count($data[0]); $i++) {
+				?>
 				<div class="col-md-5 anh">
 					<div class="khung-anh">
-						<img src="../../public/img/4.jpg" alt="">
+						<img src="../../<?php echo $data[0][$i]['hinh_anh'] ?>" alt="">
 					</div>
 				</div>
 				<div class="col-md-7 content">
-					<p><span>Họ và tên:</span><small class="ho-ten">LÊ THỊ DIỄM PHƯỢNG</small></p>
-					<p><span>Ngày sinh:</span>1997-01-22</p>
-					<p><span>Giới tính:</span>Nữ</p>
-					<p><span>Địa chỉ:</span>Cần Thơ</p>
-					<p><span>Quốc tịch:</span>Việt Nam</p>
-					<p><span>Phone:	</span>376404446</p>
-					<p><span>Email:</span>phuong123@gmail.com</p>
-					<p><span>Website:</span>https://www.facebook.com/lethidiemphuong0197</p>
+					<p><span>Họ và tên:</span><small class="ho-ten"><?php echo $data[0][$i]['ho_ten'] ?></small></p>
+					<p><span>Ngày sinh:</span><?php echo $data[0][$i]['ngay_sinh'] ?></p>
+					<p><span>Giới tính:</span>
+					<?php if ($data[0][$i]['gioi_tinh'] == '0')
+						{ echo 'Nữ';}
+						else {
+							echo 'Nam';
+						}
+					 ?>
+						
+					</p>
+					<p><span>Địa chỉ:</span><?php echo $data[0][$i]['ten_tinh'] ?></p>
+					<p><span>Quốc tịch:</span><?php echo $data[0][$i]['quoc_tich'] ?></p>
+					<p><span>Phone:	</span><?php echo $data[0][$i]['phone'] ?></p>
+					<p><span>Email:</span><?php echo $data[0][$i]['email'] ?></p>
+					<p><span>Website:</span><?php echo $data[0][$i]['website'] ?></p>
 				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div> <!-- hết phan-2 -->
@@ -67,13 +83,17 @@
 							Trình độ học vấn
 						</div>				
 						<div class="card-body">
+							<?php
+								for ($i=0; $i < count($data[1]); $i++) {
+							?>
 							<div class="mot-field">
-								<div class="nam">2015-2019</div>
+								<div class="nam"><?php echo $data[1][$i]['time'] ?></div>
 								<div class="noidung">
-									<p><h6 class="td">Đại học KT-CN Cần Thơ</h6></p>
-									<p>Tốt nghiệp loại giỏi</p>
+									<p><h6 class="td"><?php echo $data[1][$i]['noi_hoc'] ?></h6></p>
+									<p><?php echo $data[1][$i]['chi_tiet'] ?></p>
 								</div>
 							</div> <!-- end 1 field -->
+							<?php } ?>
 						</div>
 					</div>
 				</div> <!-- end 1 card -->	
@@ -83,10 +103,13 @@
 							Chứng chỉ
 						</div>
 						<div class="card-body">
+							<?php
+								for ($i=0; $i < count($data[2]); $i++) {
+							?>
 							<div class="mot-field">
-								<div class="nam">2017</div>
+								<div class="nam"><?php echo $data[2][$i]['time'] ?></div>
 								<div class="noidung">
-									<p>Chứng chỉ anh văn B1</p>
+									<p><?php echo $data[2][$i]['ten_chung_chi'] ?></p>
 								</div>
 							</div> <!-- end 1 field -->
 							<?php } ?>
@@ -99,12 +122,16 @@
 							Giải thưởng
 						</div>
 						<div class="card-body">
+							<?php
+								for ($i=0; $i < count($data[3]); $i++) {
+							?>
 							<div class="mot-field">
-								<div class="nam">2018</div>
+								<div class="nam"><?php echo $data[3][$i]['ten_giai_thuong'] ?></div>
 								<div class="noidung">
-									<p>Học bổng học tập</p>
+									<p><?php echo $data[3][$i]['time'] ?></p>
 								</div>
 							</div> <!-- end 1 field -->
+							<?php } ?>
 						</div>
 					</div>
 				</div> <!-- end 1 card -->
@@ -114,13 +141,17 @@
 							Hoạt động
 						</div>
 						<div class="card-body">
+							<?php
+								for ($i=0; $i < count($data[4]); $i++) {
+							?>
 							<div class="mot-field">
-								<div class="nam">2019</div>
+								<div class="nam"><?php echo $data[4][$i]['time'] ?></div>
 								<div class="noidung">
-									<p><h6>Nhóm tình nguyện hè..</h6></p>
-									<p>Đây là noi_dung</p>
+									<p><h6><?php echo $data[4][$i]['ten_hoat_dong'] ?></h6></p>
+									<p><?php echo $data[4][$i]['noi_dung'] ?></p>
 								</div>
 							</div> <!-- end 1 field -->
+							<?php } ?>
 						</div>
 					</div>
 				</div> <!-- end 1 card -->		
@@ -147,14 +178,14 @@
 							<h5 class="card-title">SỞ THÍCH</h5>
 
 							<div class="noidung">
+								<?php
+									for ($i=0; $i < count($data[5]); $i++) {
+								?>
 								<div class="mot-tin">
 									<i class="fa fa-check-circle"></i>
-									<span class="td">Shopping</span> <br>
+									<span class="td"><?php echo $data[5][$i]['ten_so_thich'] ?></span> <br>
 								</div> <!-- hết mot-tin -->
-								<div class="mot-tin">
-									<i class="fa fa-check-circle"></i>
-									<span class="td">Đọc sách</span> <br>
-								</div> <!-- hết mot-tin -->
+								<?php } ?>
 							</div>
 							
 						</div>
@@ -167,14 +198,14 @@
 						<div class="card-body">
 							<h5 class="card-title">KỸ NĂNG</h5>
 							<div class="noidung">
+								<?php
+									for ($i=0; $i < count($data[6]); $i++) {
+								?>
 								<div class="mot-tin">
 									<i class="fa fa-check-circle"></i>
-									<span class="td">HTML</span>
+									<span class="td"><?php echo $data[6][$i]['ten_ky_nang'] ?></span>
 								</div> <!-- hết mot-tin -->
-								<div class="mot-tin">
-									<i class="fa fa-check-circle"></i>
-									<span class="td">Css</span>
-								</div> <!-- hết mot-tin -->
+								<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -185,16 +216,15 @@
 						<div class="card-body">
 							<h5 class="card-title">KINH NGHIỆM</h5>
 							<div class="noidung">
+								<?php
+									for ($i=0; $i < count($data[7]); $i++) {
+								?>
 								<div class="mot-tin">
-									<span class="nam">Hè 2017</span>
-									<span class="td">Thực tập thực tế</span>
-									<span class="chitiet">Thực tập ở vị trí Nhân viên SEO ở công ty Cổ phần đầu tư Mua Hàng Tại Nhà</span>
+									<span class="nam"><?php echo $data[7][$i]['time'] ?></span>
+									<span class="td"><?php echo $data[7][$i]['noi_lam'] ?></span>
+									<span class="chitiet"><?php echo $data[7][$i]['chi_tiet'] ?></span>
 								</div> <!-- hết mot-tin -->
-								<div class="mot-tin">
-									<span class="nam">Hè 2018</span>
-									<span class="td">Thực tập thực tế</span>
-									<span class="chitiet">Thực tập ở vị trí Nhân viên SEO ở công ty Cổ phần đầu tư Mua Hàng Tại Nhà</span>
-								</div> <!-- hết mot-tin -->
+								<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -205,10 +235,13 @@
 	<div class="phan-5">
 		<div class="container">
 			<div class="row">
+				<?php
+					for ($i=0; $i < count($data[8]); $i++) {
+				?>
 				<div class="col-md-12 tieu-de">
 					<h2>DỰ ÁN</h2>
-					<h5>Rainway Group</h5>
-					<span>(2016-2017)</span>
+					<h5><?php echo $data[8][$i]['ten_du_an'] ?></h5>
+					<span><?php echo $data[8][$i]['time'] ?></span>
 				</div>
 
 				<div class="col-md-12">
@@ -217,39 +250,44 @@
 							<tr>
 								<th>Mô tả</th>
 								<td>
-									<p><- Ứng dụng mobile giúp mọi người đặt vé nhanh chóng bất kì lúc nào, bất kì nơi đâu.</p>
+									<p><?php echo $data[8][$i]['mo_ta'] ?></p>
 								</td>
 							</tr> <!-- hết 1 row -->
 							<tr>
 								<th>Số lượng thành viên</th>
-								<td>8</td>
+								<td><?php echo $data[8][$i]['so_luong'] ?></td>
 							</tr> <!-- hết 1 row -->
 							<tr>
 								<th>Vị trí trong công việc</th>
-								<td>Lập trình viên</td>
+								<td><?php echo $data[8][$i]['vi_tri_cong_viec'] ?></td>
 							</tr> <!-- hết 1 row -->
 							<tr>
 								<th>Vai trò trong dự án</th>
 								<td>
-									<p>- Phân tích và thiết kế hệ thống, phát triển module, tối ưu code, sửa lỗi</p>
+									<p><?php echo $data[8][$i]['vai_tro'] ?></p>
 								</td>
 							</tr> <!-- hết 1 row -->
 							<tr>
 								<th>Công nghệ sử dụng</th>
 								<td>
-									<p>- Android Studio 1.4, Java, Android 4.0; Google Could Message</p>
+									<p><?php echo $data[8][$i]['cong_nghe'] ?></p>
 
 								</td>
 							</tr> <!-- hết 1 row -->
 						</tbody>
 					</table>
 				</div>
+				<?php } ?>
 				<div class="col-md-12">
+					<?php
+					for ($i=0; $i < count($data[0]); $i++) {
+				?>
 					<center>
-						<a href="" class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</a>
-						<a href="template-cv.html" class="btn btn-outline-info" > <i class="fa fa-download"></i>In file</a>
-						<a href="" class="btn btn-outline-secondary" > <i class="fa fa-home"></i>Trang chủ </a>
+						<a href="../updatecv/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-success" ><i class="fa fa-edit"></i>Cập nhật</a>
+						<a href="../templatecv/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info" > <i class="fa fa-download"></i>In file</a>
+						<a href="/CVIT-MVC/" class="btn btn-outline-secondary" > <i class="fa fa-home"></i>Trang chủ </a>
 					</center>
+				<?php } ?>
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,7 @@
-<main>
+<?php include "header.php"; ?>
+<?php include "navbar.php"; ?>
+	
+	<main>
 		<div class="nd-chinh">
 			<div class="container">
 				<div class="row">
@@ -10,21 +13,15 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-sm-8 m-auto">
+							<div class="col-sm-10 m-auto">
 								<div class="row">
-									<div class="col-sm-4 avatar-ntd">
-										<div class="khung-anh">
-											<img src="../../public/img/2.png" alt="" class="img-fluid">
-										</div>
-
-									</div> <!-- end avatar-ntd -->
 									<div class="col-sm-8 info-ntd">
 										<div class="row">
 											<div class="col-sm-4 text-right fbold">
 												Tên công ty :
 											</div>
 											<div class="col-sm-8">
-												CÔNG TY CỔ PHẦN ĐẦU TƯ MUA HÀNG TẠI NHÀ
+												<?php echo $_SESSION['recruiters']['ten_cong_ty'] ?>
 											</div>
 										</div> <!-- end 1 row info-ntd -->
 										<div class="row">
@@ -32,7 +29,7 @@
 												Địa chỉ :
 											</div>
 											<div class="col-sm-8">
-												Lầu 6 Tòa Nhà STS Tower. 11B Hòa Bình, P.Tân An,Q.Ninh Kiều, TP-Cần Thơ
+												<?php echo $_SESSION['recruiters']['dia_chi'] ?>
 											</div>
 										</div> <!-- end 1 row info-ntd -->
 										<div class="row">
@@ -40,7 +37,7 @@
 												Điện thoại :
 											</div>
 											<div class="col-sm-8">
-												0801.04.04.05
+												<?php echo $_SESSION['recruiters']['sdt'] ?>
 											</div>
 										</div> <!-- end 1 row info-ntd -->
 										<div class="row">
@@ -48,7 +45,7 @@
 												Email :
 											</div>
 											<div class="col-sm-8">
-												<a href="#">contact@muahangtainha.com</a>
+												<a href="#"><?php echo $_SESSION['recruiters']['email'] ?></a>
 											</div>
 										</div> <!-- end 1 row info-ntd -->
 									</div> <!-- end info-ntd -->
@@ -75,3 +72,6 @@
 		})
 	</script>
 </main> <!-- main -->
+<?php include "footer.php"; ?>
+	
+		

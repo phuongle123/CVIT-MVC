@@ -1,4 +1,5 @@
-
+<?php include "header.php"; ?>
+<?php include "navbar.php"; ?>
 	<main>
 		<div class="container-fluid banner">
 			<div class="row">
@@ -8,7 +9,7 @@
 				<div class="layer2">
 					<h2>BẠN CHƯA CÓ CV CHO RIÊNG MÌNH?</h2>
 					<p>Dễ dàng tạo hồ sơ xin việc với nhiều mẫu CV đẹp, ấn tượng chỉ trong 5 phút!</p>
-					<a href="#" class="button-create">
+					<a href="user/taocv/<?php echo $_SESSION['user']['id_tv']  ?>" class="button-create">
 						<i class="fa fa-pencil"></i> <span class="content">Tạo cv đầu tiên</span>
 					</a>
 				</div> <!-- end layer2 -->
@@ -26,7 +27,7 @@
 					for ($i=0; $i < count($data[0]); $i++) {
 						?>
 						<div class="col-md-4 col-6 mot-tin">
-							<a href="#">
+							<a href="index/trangcv/<?php echo $data[0][$i]['id_tv'] ?>">
 								<img src="<?php echo $data[0][$i]['hinh_anh'] ?>">
 								<h4><?php echo $data[0][$i]['ho_ten'] ?></h4>
 								<span><?php echo $data[0][$i]['ten_chuyen_nganh'] ?></span>
@@ -50,7 +51,7 @@
 										?>
 										<li>
 											<i class="fa fa-angle-double-right"></i>
-											<a href="user/tintuyendung-tv.html">
+											<a href="index/tintuyendung/<?php echo $data[1][$i]['id_tt'] ?>">
 												<?php echo $data[1][$i]['tieu_de'] ?>
 											</a>
 										</li> <!-- end mottin tuyen dung -->
@@ -59,7 +60,7 @@
 										?>
 									</ul>
 									<div class="btn-about">
-										<a href="index/dstintuyendung/">
+										<a href="index/dstintuyendung">
 											Xem chi tiết <i class="fa fa-angle-double-right"></i></a>
 									</div>
 								</div>
@@ -71,3 +72,4 @@
 
 			</div>
 		</main> <!-- main -->
+<?php include "footer.php"; ?>

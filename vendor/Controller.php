@@ -7,7 +7,7 @@ class Controller
 {
 	protected $folder;
 	
-	function render($file, $data = array(), $title = null, $recruiters = null){
+	function render($file, $data = array(),$title = null, $recruiters = null){
 		$file_path = "views/".$this->folder."/".$file.".php";
 		if(file_exists($file_path)){
 

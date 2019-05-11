@@ -1365,27 +1365,28 @@ span.edit-sothich.edit-colortext {
 header.trangtk .header-right {
     margin-top: 0;
 }
-header.trangtk .header-right a.btn,
-header.trangtk .header-right .btn-outline-secondary.dropdown-toggle:focus,
-header.trangtk .header-right .btn-outline-secondary.dropdown-toggle:active {
+header .header-right a.btn,
+header .header-right .btn-outline-secondary.dropdown-toggle:focus,
+header .header-right .btn-outline-secondary.dropdown-toggle:active {
     background-color: #fff;
     border: none;
     box-shadow: none;
     padding-bottom: 0px;
     padding-top: 0px;
+    margin-top: -12px;
 }
-header.trangtk .info .name {
+header .info .name {
     font-size: 16px;
     text-transform: none;
     color: #666;
     line-height: 46px;
 }
 
-header.trangtk .info .name i {
+header .info .name i {
     font-size: 18px;
     color: rgba(0,0,0,0.38);
 }
-header.trangtk .info img {
+header .info img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -2351,7 +2352,7 @@ center a.btn, center button.btn {
     font-size: 14px;
 }
 
-center a.btn i {
+center a.btn i, center button.btn i {
     margin-right: 8px !important;
     font-size: 18px !important;
     margin-left: 0px !important;

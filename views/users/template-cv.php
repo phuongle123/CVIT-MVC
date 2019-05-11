@@ -38,9 +38,13 @@
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit1.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>
 							<p class="card-text editns">
-								<a href="cvfile-orbit1.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile1/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 1</p>
@@ -51,9 +55,13 @@
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit2.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>
 							<p class="card-text editns">
-								<a href="cvfile-orbit2.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile2/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 2</p>
@@ -64,9 +72,13 @@
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit3.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>
 							<p class="card-text editns">
-								<a href="cvfile-orbit3.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile3/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 3</p>
@@ -77,9 +89,13 @@
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-orbit4.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>
 							<p class="card-text editns">
-								<a href="cvfile-orbit4.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile4/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 4</p>
@@ -89,10 +105,14 @@
 						<div class="bg-hover">
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar1.png" alt="Card image cap" name="img_avatar">
-						<div class="card-body p-2">
+						<div class="card-body p-2"
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>>
 							<p class="card-text editns">
-								<a href="cvfile-pillar1.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile5/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 5</p>
@@ -103,9 +123,13 @@
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar2.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>
 							<p class="card-text editns">
-								<a href="cvfile-pillar2.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile6/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 6</p>
@@ -116,9 +140,13 @@
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar3.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>
 							<p class="card-text editns">
-								<a href="cvfile-pillar3.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile7/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 7</p>
@@ -129,9 +157,13 @@
 						</div>
 						<img class="card-img-top img-fluid" src="../../public/img/template-pillar4.png" alt="Card image cap" name="img_avatar">
 						<div class="card-body p-2">
+							<?php
+							for ($i=0; $i < count($data[0]); $i++) {
+							?>
 							<p class="card-text editns">
-								<a href="cvfile-pillar4.php" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
+								<a href="../../user/cvfile8/<?php echo $data[0][$i]['id_tv'] ?>" class="btn btn-outline-info"><i class="fa fa-eye"></i> Live demo</a>
 							</p>
+							<?php } ?>
 						</div>
 					</div> 
 					<p class= "title-card">Template 8</p>

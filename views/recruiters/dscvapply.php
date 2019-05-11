@@ -1,3 +1,5 @@
+<?php include "header.php"; ?>
+<?php include "navbar.php"; ?>
 <main>
 		<div class="container chuyen-nganh">
 			<div class="row">
@@ -91,3 +93,4 @@
 				</div>
 			</div> <!-- end nd-chinh -->
 		</main> <!-- main -->
+<?php include "footer.php"; ?>
