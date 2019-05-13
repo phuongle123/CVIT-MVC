@@ -116,6 +116,12 @@
 														<table class="table table-bordered w-75 m-auto">
 															<tbody>
 																<tr>
+																	<th>Họ và Tên</th>
+																	<td>
+																		<input name="ho_ten" type="text" value="<?php echo $data[0][$i]['ho_ten'] ?>">
+																	</td>
+																</tr> <!-- hết 1 row -->
+																<tr>
 																	<th>Ngày sinh</th>
 																	<td>
 																		<input name="ngay_sinh" type="text" value="<?php echo $data[0][$i]['ngay_sinh'] ?>">
@@ -365,7 +371,7 @@
 			</li>
 
 			<li class="content4">
-		<form action="../controller/update_so_thich.php?id_tv=<?php echo $document['id_tv'];?>" method="POST">
+		<form action="../../updateuser/sothich" method="POST">
 		<div class="contentitem">
 			<div class="phan-5">
 				<div class="container">
@@ -380,16 +386,18 @@
 									for ($i=0; $i < count($data[5]); $i++) {
 								?>
            							 <p class="td stk">
-           							 	<input name="ten_so_thich" type="text" placeholder="" value="<?php echo $data[5][$i]['ten_so_thich'];?>">
-           							 	<a href="" class="btn btn-info">Xóa</a>
+           							 	<input name="so_thich" type="text" placeholder="" value="<?php echo $data[5][$i]['ten_so_thich'];?>">
+           							 	<a href="../../updateuser/xoasothich" class="btn btn-info">Xóa</a>
            							 </p>
            						 <?php } ?>
            							<p>
            						 		<select id="inputState" class="form-control" name="ten_so_thich">
 											<option selected="">Chọn sở thích..</option>
-											<?php  ?>
-											<option value="<?php echo $value['id_so_thich'] ?>"><?php echo $value['ten_so_thich']; ?></option>
-											<?php  ?>
+											<?php
+												for ($i=0; $i < count($data[9]); $i++) {
+											?>
+											<option value="<?php echo $data[9][$i]['id_so_thich'] ?>"><?php echo  $data[9][$i]['ten_so_thich'] ?></option>
+											<?php } ?>
 										</select>
 										<button name="add_so_thich" type="submit" class="btn btn-info">Thêm</button>
            							</p>
@@ -424,16 +432,18 @@
 									for ($i=0; $i < count($data[6]); $i++) {
 								?>
            							 <p class="td stk">
-           							 	<input name="ten_so_thich" type="text" placeholder="" value="<?php echo $data[6][$i]['ten_ky_nang'];?>">
+           							 	<input name="ten_ky_nang" type="text" placeholder="" value="<?php echo $data[6][$i]['ten_ky_nang'];?>">
            							 	<a href="" class="btn btn-info">Xóa</a>
            							 </p>
            						 <?php } ?>
            							<p>
-           						 		<select id="inputState" class="form-control" name="ten_so_thich">
-											<option selected="">Chọn sở thích..</option>
-											<?php  ?>
-											<option value="<?php echo $value['id_so_thich'] ?>"><?php echo $value['ten_so_thich']; ?></option>
-											<?php  ?>
+           						 		<select id="inputState" class="form-control" name="ten_ky_nang">
+											<option selected="">Chọn kỹ năng..</option>
+											<?php
+												for ($i=0; $i < count($data[10]); $i++) {
+											?>
+											<option value="<?php echo $data[10][$i]['id_kn'] ?>"><?php echo $data[10][$i]['ten_ky_nang'] ?></option>
+											<?php } ?>
 										</select>
 										<button name="add_so_thich" type="submit" class="btn btn-info">Thêm</button>
            							</p>

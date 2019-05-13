@@ -11,8 +11,8 @@ class updatecvModel extends Model
 	{
 		parent::__construct();
 	}
-	function updateinfo($ngay_sinh, $gioi_tinh,$website,$phone,$quoc_tich,$mo_ta_ngan ,$id_tv){
-		$sql = "UPDATE tt_thanh_vien SET ngay_sinh = '".$ngay_sinh."', gioi_tinh = '".$gioi_tinh."',website = '".$website."',phone = '".$phone."',quoc_tich = '".$quoc_tich."',mo_ta_ngan = '".$mo_ta_ngan."' WHERE id_tv = ".$id_tv;
+	function updateinfo($ho_ten,$ngay_sinh, $gioi_tinh,$website,$phone,$quoc_tich,$mo_ta_ngan ,$id_tv){
+		$sql = "UPDATE tt_thanh_vien SET ho_ten = '".$ho_ten."', ngay_sinh = '".$ngay_sinh."', gioi_tinh = '".$gioi_tinh."',website = '".$website."',phone = '".$phone."',quoc_tich = '".$quoc_tich."',mo_ta_ngan = '".$mo_ta_ngan."' WHERE id_tv = ".$id_tv;
 		if(!$this->conn->query($sql)){
 			return false;
 		} else {
@@ -68,5 +68,24 @@ class updatecvModel extends Model
 			return true;
 		}
 	}
+	function addsothich( $ten_so_thich,$id_tv){
+		
+		$sql = "INSERT INTO tt_so_thich(id_tv,id_so_thich)  VALUES ('','".$id_tv."','".$ten_so_thich."')";
+		if(!$this->conn->query($sql)){
+			return false;
+		} else {
+			return true;
+		}
+	}
+	function xoasothich($id_tv){
+		
+		$sql = "DELETE from tt_so_thich where id_tv=$id_tv";
+		if(!$this->conn->query($sql)){
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	
 }

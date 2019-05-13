@@ -73,47 +73,19 @@
 								<span class="name"><i class="fa fa-bell"></i></span>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="dropdowntb">
-								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="../../public/img/kai.jpg" alt="" class="img-thumbnail">
+								<?php
+								for ($i=0; $i < count($data[2]); $i++) {
+								?>
+								<a class="dropdown-item" href="../tintuyendung/<?php echo $data[2][$i]['id_tt'] ?>">
+									<img src="../../<?php echo $data[2][$i]['hinh_anh'] ?>" alt="" class="img-thumbnail">
 									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
+										<span class="name-cv">"<?php echo $data[2][$i]['ho_ten'] ?>"</span>
+										đã vừa Apply vào tin <span class="name-ntd"> "<?php echo $data[2][$i]['tieu_de'] ?>"</span>
 									</span>
 								</a> <!-- end 1 tb -->
-								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="../../public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="../../public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="../../public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="../../public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->
-								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="../../public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương caoTuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->
+							<?php } ?>
 								<div class="about">
-									<a href="dsthongbao-ntd.html">Xem tất cả</a>
+									<a href="../dsthongbao">Xem tất cả</a>
 								</div>
 								
 							</div>
@@ -233,54 +205,19 @@
 					<ul class="list-cv">
 						<li class="cv-item">
 							<div class="row">
+								<?php
+									for ($i=0; $i < count($data[1]); $i++) {
+									?>
 								<div class="col-sm-2">
-									<img src="../../public/img/kai.jpg" alt="" class="img-fluid">
+									<img src="../../<?php echo $data[1][$i]['hinh_anh'] ?>" alt="" class="img-fluid">
 								</div>
 								<div class="col-sm-6">
-									Nguyễn Văn A
+									<?php echo $data[1][$i]['ho_ten'] ?>
 								</div>
 								<div class="col-sm-3 right">
-									<a href="" class="btn btn-outline-primary">Xem chi tiết</a>
+									<a href="../viewcv/<?php echo $data[1][$i]['id_tv'] ?>" class="btn btn-outline-primary">Xem chi tiết</a>
 								</div>
-							</div>
-						</li> <!-- end cv-item -->
-						<li class="cv-item">
-							<div class="row">
-								<div class="col-sm-2">
-									<img src="../../public/img/kai.jpg" alt="" class="img-fluid">
-								</div>
-								<div class="col-sm-6">
-									Nguyễn Văn A
-								</div>
-								<div class="col-sm-3 right">
-									<a href="" class="btn btn-outline-primary">Xem chi tiết</a>
-								</div>
-							</div>
-						</li> <!-- end cv-item -->
-						<li class="cv-item">
-							<div class="row">
-								<div class="col-sm-2">
-									<img src="../../public/img/kai.jpg" alt="" class="img-fluid">
-								</div>
-								<div class="col-sm-6">
-									Nguyễn Văn A
-								</div>
-								<div class="col-sm-3 right">
-									<a href="" class="btn btn-outline-primary">Xem chi tiết</a>
-								</div>
-							</div>
-						</li> <!-- end cv-item -->
-						<li class="cv-item">
-							<div class="row">
-								<div class="col-sm-2">
-									<img src="../../public/img/kai.jpg" alt="" class="img-fluid">
-								</div>
-								<div class="col-sm-6">
-									Nguyễn Văn A
-								</div>
-								<div class="col-sm-3 right">
-									<a href="" class="btn btn-outline-primary">Xem chi tiết</a>
-								</div>
+							<?php } ?>
 							</div>
 						</li> <!-- end cv-item -->
 					</ul>

@@ -11,8 +11,9 @@ class UpdateuserController extends Controller
 		require_once 'vendor/Model.php';
 		require_once 'models/users/updatecvModel.php';
 		$md = new updatecvModel;
-		$ngay_sinh  = $gioi_tinh = $website = $phone = $quoc_tich = $mo_ta_ngan ="";
+		$ho_ten =$ngay_sinh  = $gioi_tinh = $website = $phone = $quoc_tich = $mo_ta_ngan ="";
 		if(isset($_SESSION['user']['id_tv'])){$id_tv = $_SESSION['user']['id_tv'];}
+		if(isset($_POST['ho_ten'])){$ho_ten = $_POST['ho_ten'];}
 		if(isset($_POST['ngay_sinh'])){$ngay_sinh = $_POST['ngay_sinh'];}
 		if(isset($_POST['gioi_tinh'])){$gioi_tinh = $_POST['gioi_tinh'];}
 		if(isset($_POST['website'])){$website = $_POST['website'];}
@@ -21,7 +22,7 @@ class UpdateuserController extends Controller
 		if(isset($_POST['mo_ta_ngan'])){$mo_ta_ngan = $_POST['mo_ta_ngan'];}
 
 
-		if ($md ->updateinfo($ngay_sinh, $gioi_tinh,$website,$phone,$quoc_tich,$mo_ta_ngan ,$id_tv)){
+		if ($md ->updateinfo($ho_ten,$ngay_sinh, $gioi_tinh,$website,$phone,$quoc_tich,$mo_ta_ngan ,$id_tv)){
     	echo'<script language="javascript">
                         alert("Cập nhật thành công")
                     </script>';
@@ -180,6 +181,55 @@ class UpdateuserController extends Controller
 	                    </script>';
 	    header("Refresh:0; url=../user/updatecv/$id_tv");    
 	    }
+	}
+	function sothich()
+	{
+		if(isset($_POST['ten_so_thich'])){
+			$ten_so_thich = $_POST['ten_so_thich'];
+		}
+		
+		$id_tv =  $_SESSION['user']['id_tv'];
+
+		// load model
+		require_once 'vendor/Model.php';
+		require_once 'models/users/updatecvModel.php';
+		$md = new updatecvModel;
+
+		if($md->addsothich($id_tv, $ten_so_thich)){
+			echo'<script language="javascript">
+                        alert("Thêm thành công")
+                    </script>';	
+         header("Refresh:0; url=../user/updatecv/$id_tv"); 
+		}
+		else {
+			echo'<script language="javascript">
+                        alert("Thêm tin thất bại")
+                    </script>';
+		}
+		header("Refresh:0; url=../user/updatecv/$id_tv"); 
+	}
+	function xoasothich()
+	{
+		
+		$id_tv =  $_SESSION['user']['id_tv'];
+
+		// load model
+		require_once 'vendor/Model.php';
+		require_once 'models/users/updatecvModel.php';
+		$md = new updatecvModel;
+
+		if($md->xoasothich($id_tv)){
+			echo'<script language="javascript">
+                        alert("xóa thành công")
+                    </script>';	
+         header("Refresh:0; url=../user/updatecv/$id_tv"); 
+		}
+		else {
+			echo'<script language="javascript">
+                        alert("xóa thất bại")
+                    </script>';
+		}
+		header("Refresh:0; url=../user/updatecv/$id_tv"); 
 	}
 
 }

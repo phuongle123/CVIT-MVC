@@ -14,7 +14,20 @@ class recruiterModel extends Model
 	function getRecruiterByUsername($username)
 	{
 		$result = array();
-		$sql = "SELECT * FROM user_ntd,tt_ntd, dang_tt WHERE email = '".$username."' and user_ntd.id_ntd = tt_ntd.id_ntd and  user_ntd.id_ntd=dang_tt.id_ntd";
+		$sql = "SELECT * FROM user_ntd,tt_ntd WHERE email = '".$username."' and user_ntd.id_ntd = tt_ntd.id_ntd";
+		if($this->conn->query($sql)->rowCount() == 0){
+			return false;
+		} else {
+			foreach($this->conn->query($sql) as $row){
+				$result = $row;
+			}
+			return $result;
+		}
+	}
+	function getRecruiterByEmail($email)
+	{
+		$result = array();
+		$sql = "SELECT * FROM user_ntd WHERE email = '".$email."'";
 		if($this->conn->query($sql)->rowCount() == 0){
 			return false;
 		} else {
@@ -29,7 +42,7 @@ class recruiterModel extends Model
 		return $dm;
 	}
 	function gettinById($id_tt){
-		$dm = $this->select('*', 'dang_tt','id_tt = '. $id_tt, null );
+		$dm = $this->select('*', 'dang_tt','id_tt = '.$id_tt, null );
 		return $dm;
 	}
 	function postTinById($tieu_de, $noi_dung, $id_ntd){
@@ -41,5 +54,32 @@ class recruiterModel extends Model
 			return true;
 		}
 	}
+	function getDsCvById($id_tt){
+		$dm = $this->select('*', 'apply,tt_thanh_vien,dang_tt','apply.id_tt=dang_tt.id_tt and apply.id_tv=tt_thanh_vien.id_tv  and dang_tt.id_tt = '. $id_tt, null );
+		return $dm;
+	}
+	function getDsCv(){
+		$dm = $this->select('*', 'apply,tt_thanh_vien,dang_tt, chuyen_nganh','apply.id_tt=dang_tt.id_tt and apply.id_tv=tt_thanh_vien.id_tv and chuyen_nganh.id_chuyen_nganh=tt_thanh_vien.id_chuyen_nganh' , null );
+		return $dm;
+	}
+	function adduser($email,$pass){
+		
+		$sql = "INSERT INTO user_ntd VALUES ('','".$email."','".$pass."') ";
+		if(!$this->conn->query($sql)){
+			return false;
+		} else {
+			return true;
+		}
 
+	}
+	function addTtNtd($ten_cong_ty,$dia_chi,$sdt,$id_ntd){
+		
+		$sql = "INSERT INTO tt_ntd VALUES ('".$ten_cong_ty."','".$dia_chi."','".$sdt."','".$id_ntd."','') ";
+		if(!$this->conn->query($sql)){
+			return false;
+		} else {
+			return true;
+		}
+
+	}
 }

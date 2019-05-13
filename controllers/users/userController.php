@@ -41,6 +41,71 @@ class UserController extends Controller
            header('Refresh:0; url=../'); 
 		}
 	}
+	function register()
+	{
+		if(isset($_POST['ho_ten'])){
+			$ho_ten = $_POST['ho_ten'];
+		}
+		if(isset($_POST['gioi_tinh'])){
+			$gioi_tinh = $_POST['gioi_tinh'];
+		}
+		if(isset($_POST['phone'])){
+			$phone = $_POST['phone'];
+		}
+		if(isset($_POST['email'])){
+			$email = $_POST['email'];
+		}
+		if(isset($_POST['pass'])){
+			$pass = $_POST['pass'];
+		}
+		if(isset($_POST['repass'])){
+			$repass = $_POST['repass'];
+		}
+		if(isset($_POST['ten_tinh'])){
+			$ten_tinh = $_POST['ten_tinh'];
+		}
+		if(isset($_POST['ten_chuyen_nganh'])){
+			$ten_chuyen_nganh = $_POST['ten_chuyen_nganh'];
+		}
+		if(isset($_POST['ngay_sinh'])){
+			$ngay_sinh = $_POST['ngay_sinh'];
+		}
+		if(isset($_POST['website'])){
+			$website = $_POST['website'];
+		}
+		if(isset($_POST['mo_ta_ngan'])){
+			$mo_ta_ngan = $_POST['mo_ta_ngan'];
+		}
+		if(isset($_POST['quoc_tich'])){
+			$quoc_tich = $_POST['quoc_tich'];
+		}
+		
+		require_once 'vendor/Model.php';
+		require_once 'models/users/userModel.php';
+		$md = new userModel;
+
+			if(($md->adduser($email,$pass))){ 
+				$_SESSION['user']=$md->getUserByEmail($email);
+				var_dump($_SESSION['user']);
+				$id_user = $_SESSION['user']['id_user'];
+				if ($md->addTtThanhVien($ho_ten,$ngay_sinh,$gioi_tinh,$phone,$website,$quoc_tich,$mo_ta_ngan,$id_user,$ten_chuyen_nganh,$ten_tinh)) {
+				// 	echo'<script language="javascript">
+	   //                      alert("Đăng ký thành công!")
+	   //                  </script>';
+				// header('Refresh:0; url=../');
+				// } else {
+				// 	echo'<script language="javascript">
+	   //                      alert("Đăng ký không thành công, vui lòng xem lại!")
+	   //                  </script>';
+	   //       	header('Refresh:0; url=../');
+				// }
+				return true;
+			} else {
+				echo "Đã có lỗi trong quá trình tạo tài khoản, vui lòng thử lại sau!";
+				return false;
+			}
+	}
+}
 	function viewinfo($id_tv)
 	{
 		require_once 'vendor/Model.php';
@@ -227,6 +292,8 @@ class UserController extends Controller
 		$data[] =$info->getInfoKyNang($id_tv);
 		$data[] =$info->getInfoKinhNghiem($id_tv);
 		$data[] =$info->getInfoDuAn($id_tv);
+		$data[] =$info->getSoThich();
+		$data[] =$info->getKyNang();
 
 		$this->render('update_cv',$data);
 	}
@@ -245,16 +312,5 @@ class UserController extends Controller
 		session_destroy();
 		unset($_COOKIE['user']);
 		header('location: ../');
-	}
-	function hocvan()
-	{
-		require_once 'vendor/Model.php';
-		require_once 'models/users/userModel.php';
-		$md = new userModel;
-		$time_hv = $noi_hoc = $chi_tiet =  "";
-		if(isset($_POST['time_hv'])){$time_hv = $_POST['time_hv'];}
-		if(isset($_POST['noi_hoc'])){$noi_hoc = $_POST['noi_hoc'];}
-		if(isset($_POST['chi_tiet'])){$chi_tiet = $_POST['chi_tiet'];}
-		$sql = "UPDATE hoc_van SET time = '".$time_hv."', noi_hoc = '".$noi_hoc."', chi_tiet = '".$chi_tiet."' WHERE id_tv = ".$_SESSION['user']['id_tv'];
 	}
 }

@@ -56,12 +56,7 @@
 					<p><span>Họ và tên:</span><small class="ho-ten"><?php echo $data[0][$i]['ho_ten'] ?></small></p>
 					<p><span>Ngày sinh:</span><?php echo $data[0][$i]['ngay_sinh'] ?></p>
 					<p><span>Giới tính:</span>
-					<?php if ($data[0][$i]['gioi_tinh'] == '0')
-						{ echo 'Nữ';}
-						else {
-							echo 'Nam';
-						}
-					 ?>
+					<?php echo $data[0][$i]['gioi_tinh'] ?>
 						
 					</p>
 					<p><span>Địa chỉ:</span><?php echo $data[0][$i]['ten_tinh'] ?></p>

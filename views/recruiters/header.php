@@ -82,47 +82,19 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 								<span class="name"><i class="fa fa-bell"></i></span>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="dropdowntb">
-								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="public/img/kai.jpg" alt="" class="img-thumbnail">
+								<?php
+								for ($i=0; $i < count($data[0]); $i++) {
+								?>
+								<a class="dropdown-item" href="tintuyendung/<?php echo $data[0][$i]['id_tt'] ?>">
+									<img src="../<?php echo $data[0][$i]['hinh_anh'] ?>" alt="" class="img-thumbnail">
 									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
+										<span class="name-cv">"<?php echo $data[0][$i]['ho_ten'] ?>"</span>
+										đã vừa Apply vào tin <span class="name-ntd"> "<?php echo $data[0][$i]['tieu_de'] ?>"</span>
 									</span>
 								</a> <!-- end 1 tb -->
-								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->
-								<a class="dropdown-item" href="tintuyendung-ntd.html">
-									<img src="public/img/kai.jpg" alt="" class="img-thumbnail">
-									<span class="title-tb">
-										<span class="name-cv">"Nguyễn Văn A"</span>
-										đã vừa Apply vào tin <span class="name-ntd"> "Tuyển dụng Dev lương caoTuyển dụng Dev lương cao"</span>
-									</span>
-								</a> <!-- end 1 tb -->
+							<?php } ?>
 								<div class="about">
-									<a href="dsthongbao-ntd.html">Xem tất cả</a>
+									<a href="dsthongbao">Xem tất cả</a>
 								</div>
 								
 							</div>

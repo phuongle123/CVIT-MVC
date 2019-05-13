@@ -178,7 +178,7 @@
 						<a class="clickout"><i class="fa fa-close"></i></a>
 						<h3>ĐĂNG KÝ TÀI KHOẢN</h3>
 						<h6>( Dành cho Nhà tuyển dụng )</h6>
-						<form action="" method="POST">
+						<form action="recruiters/register" method="POST">
 							<div class="form-group us">
 								<input type="email" class="form-control" id="email" name="email" placeholder="Email (để quản lý CV về sau)...">
 							</div>
@@ -189,13 +189,13 @@
 								<input type="password" class="form-control" name="repass" placeholder="Nhập lại mật khẩu">
 							</div>
 							<div class="form-group ">
-								<input type="text" class="form-control" name="" placeholder="Nhập tên công ty">
+								<input type="text" class="form-control" name="ten_cong_ty" placeholder="Nhập tên công ty">
 							</div>
 							<div class="form-group ">
-								<input type="text" class="form-control" name="" placeholder="Nhập địa chỉ">
+								<input type="text" class="form-control" name="dia_chi" placeholder="Nhập địa chỉ">
 							</div>
 							<div class="form-group ">
-								<input type="text" class="form-control" name="" placeholder="Nhập số điện thoại">
+								<input type="text" class="form-control" name="sdt" placeholder="Nhập số điện thoại">
 							</div>
 							<button type="submit" name="submit" class="btn btn-default button" value="Register">Đăng Ký</button>
 						</form>
@@ -216,26 +216,26 @@
 						<a class="clickout"><i class="fa fa-close"></i></a>
 						<h3>ĐĂNG KÝ TÀI KHOẢN</h3>
 						<h6>( Dành cho Thành viên )</h6>
-						<form action="../controller/xuly_dangky_tv.php" method="POST">
+						<form action="user/register" method="POST">
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group us">
-										<input type="text" class="form-control" id="ho_ten" name="ho_ten" placeholder="Họ và tên..">				
+										<input type="text" class="form-control" name="ho_ten" placeholder="Họ và tên..">				
 									</div>
 									<div class="form-group us">
-										<input type="text" class="form-control" id="gioi_tinh" name="gioi_tinh" placeholder="Giới tính..">
+										<input type="text" class="form-control" name="gioi_tinh" placeholder="Giới tính..">
 									</div>
 									<div class="form-group us">
-										<input type="tel" class="form-control" id="ho_ten" name="phone" placeholder="Số điện thoại..">		
+										<input type="tel" class="form-control" name="phone" placeholder="Số điện thoại..">		
 									</div>
 									<div class="form-group us">
-										<input type="email" class="form-control" id="email" name="email" placeholder="Email (để quản lý CV về sau)...">
+										<input type="email" class="form-control" name="email" placeholder="Email (để quản lý CV về sau)...">
 									</div>
 									<div class="form-group pw">
-										<input type="password" class="form-control" id="pass" name="pass" placeholder="Nhập mật khẩu">
+										<input type="password" class="form-control" name="pass" placeholder="Nhập mật khẩu">
 									</div>
 									<div class="form-group pw">
-										<input type="password" class="form-control" id="repass" name="repass" placeholder="Nhập lại mật khẩu">
+										<input type="password" class="form-control" name="repass" placeholder="Nhập lại mật khẩu">
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -260,16 +260,16 @@
 										</select>
 									</div>
 									<div class="form-group us">
-										<input type="text" class="form-control" id="ho_ten" name="ngay_sinh" placeholder="Ngày sinh...">				
+										<input type="text" class="form-control" name="ngay_sinh" placeholder="Ngày sinh...">				
 									</div>
 									<div class="form-group us">
-										<input type="text" class="form-control" id="ho_ten" name="website" placeholder="Webstie...">				
+										<input type="text" class="form-control" name="website" placeholder="Webstie...">				
 									</div>
 									<div class="form-group us">
-										<input type="text" class="form-control" id="ho_ten" name="mo_ta_ngan" placeholder="Mô tả ngắn...">
+										<input type="text" class="form-control" name="mo_ta_ngan" placeholder="Mô tả ngắn...">
 									</div>	
 									<div class="form-group us">
-										<input type="text" class="form-control" id="ho_ten" name="quoc_tich" placeholder="Quốc tịch...">
+										<input type="text" class="form-control" name="quoc_tich" placeholder="Quốc tịch...">
 									</div>			
 								</div>
 								<div class="col-sm-12">
