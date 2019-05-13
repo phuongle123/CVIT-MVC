@@ -10,7 +10,7 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 	<!-- Responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>CVIT</title>
-	<link rel="icon" href="public/img/favicon-logo.png">
+	<link rel="icon" href="../public/img/favicon-logo.png">
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=vietnamese" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=vietnamese" rel="stylesheet">
@@ -22,7 +22,7 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" href="../public/css/style.css">
+	<link rel="stylesheet" href="../../public/css/style.css">
 	<style>
 		header.trangtk .header-right {
 		    margin-top: 12px;
@@ -34,7 +34,7 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-12">
-					<a href="/CVIT-MVC/recruiters/index" class="logo-main"><img src="../public/img/logo.png" alt="" class=""></a>
+					<a href="/CVIT-MVC/recruiters/index/<?php echo $_SESSION['recruiters']['id_ntd'] ?>" class="logo-main"><img src="../../public/img/logo.png" alt="" class=""></a>
 				</div>
 				<div class="col-md-7">
 					<form class="example form-search" action="action_page.php">
@@ -64,7 +64,7 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 				<div class="col-md-3 header-right">
 					<div class="content">
 <!-- 						<a class="info">
-							<img src="public/img/kai.jpg" alt="">
+							<img src="../public/img/kai.jpg" alt="">
 							<span class="name">Trần Ngọc Huyền</span>
 						</a> -->	
 						
@@ -73,8 +73,8 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 								<span class="name"><i class="fa fa-user"></i></span>
 							</a>
 							<div class="dropdown-menu shadow" aria-labelledby="dropdowntk">
-								<a class="dropdown-item" href="info">Thông tin nhà tuyển dụng</a>
-								<a class="dropdown-item" href="logout">Đăng xuất</a>
+								<a class="dropdown-item" href="../info/<?php echo $_SESSION['recruiters']['id_ntd'] ?>">Thông tin nhà tuyển dụng</a>
+								<a class="dropdown-item" href="../logout">Đăng xuất</a>
 							</div>
 						</div>
 						<div class="dropdown dropdowntb">
@@ -85,7 +85,7 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 								<?php
 								for ($i=0; $i < count($data[0]); $i++) {
 								?>
-								<a class="dropdown-item" href="tintuyendung/<?php echo $data[0][$i]['id_tt'] ?>">
+								<a class="dropdown-item" href="../tintuyendung/<?php echo $data[0][$i]['id_tt'] ?>">
 									<img src="../<?php echo $data[0][$i]['hinh_anh'] ?>" alt="" class="img-thumbnail">
 									<span class="title-tb">
 										<span class="name-cv">"<?php echo $data[0][$i]['ho_ten'] ?>"</span>
@@ -94,9 +94,8 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 								</a> <!-- end 1 tb -->
 							<?php } ?>
 								<div class="about">
-									<a href="dsthongbao">Xem tất cả</a>
+									<a href="../dsthongbao/<?php echo $_SESSION['recruiters']['id_ntd'] ?>">Xem tất cả</a>
 								</div>
-								
 							</div>
 						</div>
 					</div>
@@ -108,7 +107,7 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-12">
-					<a href="/CVIT-MVC/recruiters/index" class="logo-main"><img src="../public/img/logo.png" alt="" class=""></a>
+					<a href="/CVIT-MVC/recruiters/index/<?php echo $_SESSION['recruiters']['id_ntd'] ?>" class="logo-main"><img src="../../public/img/logo.png" alt="" class=""></a>
 				</div>
 				<div class="col-md-7">
 					<form class="example form-search" action="action_page.php">
@@ -137,5 +136,5 @@ if(isset($_COOKIE['recruiters']) && !isset($_SESSION['recruiters'])){
 				</div>
 			</div>
 		</div>
-		<script src="public/js/login.js"></script>
+		<script src="../public/js/login.js"></script>
 	</header> <!-- end header background - mobile -->

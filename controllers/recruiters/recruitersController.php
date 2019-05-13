@@ -6,11 +6,11 @@ class RecruitersController extends Controller
 	{
 		$this->folder = "recruiters";
 	}
-	function index(){
+	function index($id_ntd){
 		require_once 'vendor/Model.php';
 		require_once 'models/recruiters/recruiterModel.php';
 		$md = new recruiterModel;
-		$data[]=$md->getDsCv();
+		$data[]=$md->getDsCv($id_ntd);
 		$this->render('index',$data);
 	}
 	function login(){
@@ -27,7 +27,8 @@ class RecruitersController extends Controller
 			$data = $md->getRecruiterByUsername($username);
 			if($password == $data['pass']){
 				$_SESSION['recruiters'] = $data;
-				header('Location: http://localhost/CVIT-MVC/recruiters/index');
+				$id_ntd=$data['id_ntd'];
+				header("Location: http://localhost/CVIT-MVC/recruiters/index/$id_ntd");
 			} else {
 				echo'<script language="javascript">
                         alert("Sai tên tài khoản hoặc mật khẩu!")
@@ -118,8 +119,9 @@ class RecruitersController extends Controller
 		require_once 'vendor/Model.php';
 		require_once 'models/recruiters/recruiterModel.php';
 		$md = new recruiterModel;
+		$data[]=$md->getDsCv($id_ntd);
 		$data[] = $md->getDstinById($id_ntd);
-		$data[]=$md->getDsCv();
+		
 		$this->render('dstintuyendung',$data);
 	}
 	function info($id_ntd){
@@ -135,7 +137,7 @@ class RecruitersController extends Controller
 		$md = new recruiterModel;
 		$data[] = $md->gettinById($id_tt);
 		$data[]=$md->getDsCvById($id_tt);
-		$data[]=$md->getDsCv($id_ntd);
+		
 		$this->render('tintuyendung', $data);
 	}
 	function dscvapply($id_ntd){

@@ -58,8 +58,8 @@ class recruiterModel extends Model
 		$dm = $this->select('*', 'apply,tt_thanh_vien,dang_tt','apply.id_tt=dang_tt.id_tt and apply.id_tv=tt_thanh_vien.id_tv  and dang_tt.id_tt = '. $id_tt, null );
 		return $dm;
 	}
-	function getDsCv(){
-		$dm = $this->select('*', 'apply,tt_thanh_vien,dang_tt, chuyen_nganh','apply.id_tt=dang_tt.id_tt and apply.id_tv=tt_thanh_vien.id_tv and chuyen_nganh.id_chuyen_nganh=tt_thanh_vien.id_chuyen_nganh' , null );
+	function getDsCv($id_ntd){
+		$dm = $this->select('*', 'apply,tt_thanh_vien,dang_tt, chuyen_nganh,user_ntd','apply.id_tt=dang_tt.id_tt and apply.id_tv=tt_thanh_vien.id_tv and chuyen_nganh.id_chuyen_nganh=tt_thanh_vien.id_chuyen_nganh and user_ntd.id_ntd=dang_tt.id_ntd and user_ntd.id_ntd = '. $id_ntd , null );
 		return $dm;
 	}
 	function adduser($email,$pass){

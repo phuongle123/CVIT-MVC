@@ -11,13 +11,13 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent1">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a class="nav-link home-link" href="/CVIT-MVC/recruiters/index"><i class="fa fa-home"></i>TRANG CHỦ</a>
+							<a class="nav-link home-link" href="/CVIT-MVC/recruiters/index/<?php echo $_SESSION['recruiters']['id_ntd'] ?>"><i class="fa fa-home"></i>TRANG CHỦ</a>
 						</li>
 						<li class="nav-item cn">
-							<a class="nav-link" href="dscvapply" role="button">DANH SÁCH CV APPLY</a>
+							<a class="nav-link" href="../dscvapply/<?php echo $_SESSION['recruiters']['id_ntd'] ?>" role="button">DANH SÁCH CV APPLY</a>
 						</li>
 						<li class="nav-item cn">
-							<a class="nav-link" href="dstintuyendung/<?php echo $_SESSION['recruiters']['id_ntd'] ?>" role="button">DANH SÁCH TIN</a>
+							<a class="nav-link" href="../dstintuyendung/<?php echo $_SESSION['recruiters']['id_ntd'] ?>" role="button">DANH SÁCH TIN</a>
 						</li>
 					</ul> <!-- end ul -->
 				</div>
