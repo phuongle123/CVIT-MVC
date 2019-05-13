@@ -173,13 +173,13 @@ class RecruitersController extends Controller
 			echo'<script language="javascript">
                         alert("Đăng tin thành công")
                     </script>';
-			header('Location: http://localhost/CVIT-MVC/recruiters/index');
+			header("Refresh:0; url=../recruiters/index/$id_ntd");
 		}
 		else {
 			echo'<script language="javascript">
                         alert("Đăng tin thất bại")
                     </script>';
-			header('Location: http://localhost/CVIT-MVC/recruiters/index');
+			header("Refresh:0; url=../recruiters/index/$id_ntd");
 		}
 	}
 	function viewcv($id_tv)

@@ -9,7 +9,7 @@
 						<h2>ĐĂNG TIN TUYỂN DỤNG</h2>
 						<span class="kengang"></span>
 					</div>
-					<form action="dang_tt" method="POST">
+					<form action="../dang_tt" method="POST">
 
 						<div class="col-md-12 dttd">
 							<div class="form-group">
