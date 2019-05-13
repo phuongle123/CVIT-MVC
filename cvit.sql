@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 19, 2019 lúc 06:29 AM
+-- Thời gian đã tạo: Th5 13, 2019 lúc 12:52 PM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 7.2.10
 
@@ -25,6 +25,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `apply`
+--
+
+CREATE TABLE `apply` (
+  `id_tv` int(11) NOT NULL,
+  `id_tt` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `apply`
+--
+
+INSERT INTO `apply` (`id_tv`, `id_tt`) VALUES
+(1, 4),
+(1, 2),
+(3, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `chung_chi`
 --
 
@@ -42,8 +62,12 @@ CREATE TABLE `chung_chi` (
 INSERT INTO `chung_chi` (`id_chung_chi`, `ten_chung_chi`, `time`, `id_tv`) VALUES
 (1, 'Chứng chỉ toeic 450', '2018', 1),
 (2, 'chứng chỉ toeic 350', '2018', 4),
-(3, 'Chứng chỉ anh văn B1', '2017', 3),
-(4, 'Chứng chỉ toeic 450', '2017', 2);
+(3, 'Chứng chỉ anh văn B1', '2016', 3),
+(4, 'Chứng chỉ toeic 450', '2017', 2),
+(6, '2018', 'Chứng chỉ tin học..', 3),
+(7, '', '2018', 3),
+(8, 'Chứng chỉ tin học..', '2018', 3),
+(9, '1', '1', 5);
 
 -- --------------------------------------------------------
 
@@ -86,7 +110,10 @@ INSERT INTO `dang_tt` (`id_tt`, `tieu_de`, `noi_dung`, `id_ntd`) VALUES
 (1, 'Lập Trình Viên Kinh Nghiệm (Senior/junior Developer)', '- Thiết kế, xây dựng và phát triển các module cho hệ thống phần mềm trên nền tảng web hoặc mobile: Hệ thống ví điện tử, hệ thống cổng thanh toán, quản lý bán hàng, quản lý CRM, Quản lý văn bản, Hành chính công một cửa,... Tham gia nghiên cứu áp dụng các kỹ thuật công nghệ mới áp dụng vào trong dự án. Xây dựng và phân tích cơ sở dữ liệu cho dự án. Nghiên cứu công nghệ cho dự án. Báo cáo tiến độ công việc cho quản lý dự án và Ban giám đốc.', 1),
 (2, 'Android/ios Mobile Developer', '- Miraway mong muốn cộng tác với các lập trình viên Mobile có kinh nghiệm, có đam mê và nhiệt huyết trong việc phát triển sản phẩm. Phân tích yêu cầu bài toán, thiết kế và phát triển sản phẩm trên nền tảng mobile (iOS/Android), Làm việc trực tiếp với khách hàng, đối tác trong và ngoài nước', 1),
 (3, 'Chuyên Viên IT Phần Mềm ( Vb.net, C, C ++) - Up to 1000$', '- Quản trị Cơ sở dữ liệu hệ thống CoreBanking; Quản trị các hệ thống ứng dụng trong CoreBanking và các hệ thống ứng dụng phần mềm TYM, Chịu trách nhiệm về phát triển một số phần mềm ứng dụng trong tổ chức,Hỗ trợ điều phối các hoạt động, đàm phán với các nhà cung ứng phần mềm và dịch vụ', 1),
-(4, '.NET Developer - Lập Trình Viên .NET (Salary Up to $1000)', '-	Tham gia lập trình phát triển phần mềm quản lý cho các doanh nghiệp. Lập trình trên ngôn ngữ .NET, CSDL SQL Server. (Biết về lập trình web ASP.NET, JS... là một lợi thế). Làm việc tại Trung tâm nghiên cứu và phát triển sản phẩm (R&D).', 1);
+(4, '.NET Developer - Lập Trình Viên .NET (Salary Up to $1000)', '-	Tham gia lập trình phát triển phần mềm quản lý cho các doanh nghiệp. Lập trình trên ngôn ngữ .NET, CSDL SQL Server. (Biết về lập trình web ASP.NET, JS... là một lợi thế). Làm việc tại Trung tâm nghiên cứu và phát triển sản phẩm (R&D).', 1),
+(5, 'adwe', 'lkjthgr', 1),
+(6, 'hk', 'hkhkhl', 1),
+(7, 'er', 'lllll', 25);
 
 -- --------------------------------------------------------
 
@@ -113,7 +140,7 @@ CREATE TABLE `du_an` (
 INSERT INTO `du_an` (`id_du_an`, `ten_du_an`, `time`, `mo_ta`, `so_luong`, `vi_tri_cong_viec`, `vai_tro`, `cong_nghe`, `id_tv`) VALUES
 (1, 'Rainway Group', '(2016-2017)', '- Ứng dụng mobile giúp mọi người đặt vé nhanh chóng bất kì lúc nào, bất kì nơi đâu.', 8, 'Lập trình viên', '- Phân tích và thiết kế hệ thống, phát triển module, tối ưu code, sửa lỗi', '- Android Studio 1.4, Java, Android 4.0; Google Could Message', 1),
 (2, 'Rainway Group', '(2016-2017)', '- Ứng dụng mobile giúp mọi người đặt vé nhanh chóng bất kì lúc nào, bất kì nơi đâu.', 8, 'Tester', '- Phân tích và thiết kế hệ thống, phát triển module, tối ưu code, sửa lỗi', '- Android Studio 1.4, Java, Android 4.0; Google Could Message', 4),
-(3, 'Rainway Group', '(2016-2017)', '- Ứng dụng mobile giúp mọi người đặt vé nhanh chóng bất kì lúc nào, bất kì nơi đâu.', 8, 'Lập trình viên', '- Phân tích và thiết kế hệ thống, phát triển module, tối ưu code, sửa lỗi', '- Android Studio 1.4, Java, Android 4.0; Google Could Message', 3),
+(3, 'Rainway Group.', '(2016-2017).', 'abcdefghlmnokfc\r\n														', 9, 'Lập trình viên.', '- Phân tích và thiết kế hệ thống, phát triển module, tối ưu code, sửa lỗi.																																', '- Android Studio 1.4, Java, Android 4.0; Google Could Message.																													', 3),
 (4, 'Rainway Group', '(2016-2017)', '- Ứng dụng mobile giúp mọi người đặt vé nhanh chóng bất kì lúc nào, bất kì nơi đâu.', 8, 'Tester', '- Phân tích và thiết kế hệ thống, phát triển module, tối ưu code, sửa lỗi', '- Android Studio 1.4, Java, Android 4.0; Google Could Message', 2);
 
 -- --------------------------------------------------------
@@ -160,7 +187,7 @@ CREATE TABLE `hoat_dong` (
 INSERT INTO `hoat_dong` (`id_hoat_dong`, `time`, `ten_hoat_dong`, `noi_dung`, `id_tv`) VALUES
 (1, 'Hè 2015', 'Nhóm tình nguyện hè', 'Tham gia chiến dịch tình nguyện Mùa Hè Xanh', 1),
 (2, 'Hè 2016', 'Nhóm tình nguyện hè', 'Tham gia hiến máu nhân đạo', 4),
-(3, 'Hè 2017', 'Nhóm tình nguyện hè', 'Tham gia chiến dịch tình nguyện Mùa Hè Xanh', 3),
+(3, 'Hè 2017', 'Nhóm tình nguyện ', 'Tham gia chiến dịch tình nguyện Mùa Hè ', 3),
 (4, 'Hè 2018', 'Nhóm tình nguyện hè', 'Tham gia hiến máu nhân đạo', 2);
 
 -- --------------------------------------------------------
@@ -185,7 +212,8 @@ INSERT INTO `hoc_van` (`id_hv`, `time`, `noi_hoc`, `chi_tiet`, `id_tv`) VALUES
 (1, '2015 - 2019', 'Đại học KT-CN Cần Thơ', 'Tốt nghiệp loại Xuất sắc, điểm trung bình 9.0', 2),
 (2, '2015-2019', 'Đại học KT-CN Cần Thơ', 'Tốt nghiệp loại Khá', 4),
 (3, '2015-2019', 'Đại học KT-CN Cần Thơ', 'Tốt nghiệp loại giỏi', 1),
-(4, '2015-2019', 'Đại học KT-CN Cần Thơ', 'Tốt nghiệp loại giỏi', 3);
+(4, '2018', 'Trường..', '...', 3),
+(5, '2018', 'Trường..', '...', 3);
 
 -- --------------------------------------------------------
 
@@ -208,7 +236,7 @@ CREATE TABLE `kinh_nghiem` (
 INSERT INTO `kinh_nghiem` (`id_kinh_nghiem`, `time`, `noi_lam`, `chi_tiet`, `id_tv`) VALUES
 (1, '2017', 'Đồ án Kỹ thuật phần mềm 2', 'Xây dựng App quản lý giảng viên', 1),
 (2, '2017', 'Đồ án Kỹ thuật phần mềm 2', 'Tìm hiểu công nghệ Ajax, MongoBD, xây dựng hệ thống website Quản lý CV', 4),
-(3, 'Hè 2017', 'Thực tập thực tế', 'Thực tập ở vị trí Nhân viên SEO ở công ty Cổ phần đầu tư Mua Hàng Tại Nhà', 3),
+(3, 'Hè 2018', 'Thực tập thực tế..', 'Thực tập vị trí Nhân viên SEO ở công ty Cổ phần đầu tư Mua Hàng Tại Nhà', 3),
 (4, '2017', 'Đồ án Kỹ Thuật Phần Mềm 2', 'Xây dựng website bán hàng online', 2);
 
 -- --------------------------------------------------------
@@ -309,7 +337,9 @@ INSERT INTO `tt_ky_nang` (`id_tv`, `id_kn`) VALUES
 (2, 5),
 (2, 3),
 (2, 8),
-(2, 6);
+(2, 6),
+(5, 5),
+(5, 8);
 
 -- --------------------------------------------------------
 
@@ -324,6 +354,17 @@ CREATE TABLE `tt_ntd` (
   `id_ntd` int(11) NOT NULL,
   `id_tt_ntd` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `tt_ntd`
+--
+
+INSERT INTO `tt_ntd` (`ten_cong_ty`, `dia_chi`, `sdt`, `id_ntd`, `id_tt_ntd`) VALUES
+('CÔNG TY CỔ PHẦN ĐẦU TƯ MUA HÀNG TẠI NHÀ', 'Lầu 6 Tòa Nhà STS Tower. 11B Hòa Bình, P.Tân An,Q.Ninh Kiều, TP-Cần Thơ', '0983010729', 1, 1),
+('CTUT', 'NVC', '0909090909', 22, 3),
+('CTUT', 'NVC', '0909090908', 23, 4),
+('CTUT', 'NVH', '123', 24, 5),
+('CTUT', '12', '123', 25, 6);
 
 -- --------------------------------------------------------
 
@@ -345,10 +386,10 @@ INSERT INTO `tt_so_thich` (`id_so_thich`, `id_tv`) VALUES
 (4, 1),
 (3, 4),
 (4, 4),
-(2, 3),
-(5, 3),
 (5, 2),
-(1, 2);
+(1, 2),
+(1, 5),
+(2, 5);
 
 -- --------------------------------------------------------
 
@@ -358,8 +399,9 @@ INSERT INTO `tt_so_thich` (`id_so_thich`, `id_tv`) VALUES
 
 CREATE TABLE `tt_thanh_vien` (
   `id_tv` int(11) NOT NULL,
+  `ho_ten` varchar(50) NOT NULL,
   `ngay_sinh` date NOT NULL,
-  `gioi_tinh` int(1) NOT NULL,
+  `gioi_tinh` varchar(4) NOT NULL,
   `phone` int(11) NOT NULL,
   `website` varchar(100) NOT NULL,
   `quoc_tich` varchar(50) NOT NULL,
@@ -374,11 +416,13 @@ CREATE TABLE `tt_thanh_vien` (
 -- Đang đổ dữ liệu cho bảng `tt_thanh_vien`
 --
 
-INSERT INTO `tt_thanh_vien` (`id_tv`, `ngay_sinh`, `gioi_tinh`, `phone`, `website`, `quoc_tich`, `hinh_anh`, `mo_ta_ngan`, `id_user`, `id_chuyen_nganh`, `id_tinh`) VALUES
-(1, '1997-01-20', 0, 362323040, 'https://www.facebook.com/dangvui.123', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 8, 'HTTT', 1),
-(2, '1997-11-27', 0, 985236478, 'https://www.facebook.com/phithi.ngocminh', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 9, 'KHMT', 1),
-(3, '1997-01-21', 0, 376404446, 'https://www.facebook.com/lethidiemphuong0197', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 7, 'KTPM', 1),
-(4, '1997-09-19', 0, 962739775, 'https://www.facebook.com/kaitran19', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 6, 'KTPM', 1);
+INSERT INTO `tt_thanh_vien` (`id_tv`, `ho_ten`, `ngay_sinh`, `gioi_tinh`, `phone`, `website`, `quoc_tich`, `hinh_anh`, `mo_ta_ngan`, `id_user`, `id_chuyen_nganh`, `id_tinh`) VALUES
+(1, 'Đặng Thị Mông Vui', '1997-01-20', 'nữ', 362323040, 'https://www.facebook.com/dangvui.123', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 8, 'HTTT', 1),
+(2, 'Phí Thị Ngọc Minh', '1997-11-27', 'nữ', 985236478, 'https://www.facebook.com/phithi.ngocminh', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 9, 'KHMT', 1),
+(3, 'Lê Thị Diễm Phượng', '1997-11-27', 'nữ', 985236478, 'https://www.facebook.com/lethidiemphuong0197', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 7, 'KTPM', 1),
+(4, 'Trần Ngọc Huyền', '1997-09-19', 'nữ', 962739775, 'https://www.facebook.com/kaitran19', 'Việt Nam', 'public/img/kai.jpg', 'Tôi là một chuyên gia tự do hoàn toàn tự do Sáng tạo Giao diện người dùng Nhà thiết kế và Nhà phát triển Liên quan với thiết kế web mới nhất và công nghệ là tuyệt vời cảm thấy liên lạc với sáng tạo.', 6, 'KTPM', 1),
+(5, 'Lê Thị Diễm My', '1997-01-20', 'nữ', 962739775, 'facebook/my123', 'Việt Nam', 'public/img/kai.jpg', 'wfegfwdv sdgefgefgre', 10, 'HTTT', 1),
+(7, 'Lê Tường Vy', '1997-01-20', 'nữ', 962739775, 'yyukyuhkhg', 'Việt Nam', 'public/img/kai.jpg', 'hjlhjlujl', 11, 'HTTT', 1);
 
 -- --------------------------------------------------------
 
@@ -388,7 +432,6 @@ INSERT INTO `tt_thanh_vien` (`id_tv`, `ngay_sinh`, `gioi_tinh`, `phone`, `websit
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `ho_ten` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `pass` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -397,11 +440,17 @@ CREATE TABLE `user` (
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`id_user`, `ho_ten`, `email`, `pass`) VALUES
-(6, 'Trần Ngọc Huyền', 'kai.tnhuyen1997@gmail.com', '123456'),
-(7, 'Lê Thị Diễm Phượng', 'phuong123@gmail.com', '123456'),
-(8, 'Đặng Thị Mộng Vui', 'vui123@gmail.com', '123456'),
-(9, 'Phí Thị Ngọc Minh', 'minh123@gmail.com', '123456');
+INSERT INTO `user` (`id_user`, `email`, `pass`) VALUES
+(6, 'kai.tnhuyen1997@gmail.com', '123456'),
+(7, 'phuong123@gmail.com', '123456'),
+(8, 'vui123@gmail.com', '123456'),
+(9, 'minh123@gmail.com', '123456'),
+(10, 'my@gmaill.com', '123'),
+(11, 'vy123@gmail.com', '123456'),
+(12, 'phuong123@gmail.com', '123'),
+(13, 'phuong1@gmail.com', '123'),
+(14, 'phuong1@gmail.com', '123'),
+(15, 'phuong1@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -420,11 +469,22 @@ CREATE TABLE `user_ntd` (
 --
 
 INSERT INTO `user_ntd` (`id_ntd`, `email`, `pass`) VALUES
-(1, 'nhatuyendung@gmail.com', '123456');
+(1, 'nhatuyendung@gmail.com', '123456'),
+(22, 'phuong114@gmail.com', '123'),
+(23, 'phuong41@gmail.com', '123'),
+(24, 'ntd@gmail.com', '123'),
+(25, 'diemmy18102001@gmail.com', 'ww');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `apply`
+--
+ALTER TABLE `apply`
+  ADD KEY `id_tv` (`id_tv`),
+  ADD KEY `id_tt` (`id_tt`);
 
 --
 -- Chỉ mục cho bảng `chung_chi`
@@ -551,13 +611,13 @@ ALTER TABLE `user_ntd`
 -- AUTO_INCREMENT cho bảng `chung_chi`
 --
 ALTER TABLE `chung_chi`
-  MODIFY `id_chung_chi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_chung_chi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `dang_tt`
 --
 ALTER TABLE `dang_tt`
-  MODIFY `id_tt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `du_an`
@@ -581,7 +641,7 @@ ALTER TABLE `hoat_dong`
 -- AUTO_INCREMENT cho bảng `hoc_van`
 --
 ALTER TABLE `hoc_van`
-  MODIFY `id_hv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_hv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `kinh_nghiem`
@@ -611,29 +671,36 @@ ALTER TABLE `tinh_thanh`
 -- AUTO_INCREMENT cho bảng `tt_ntd`
 --
 ALTER TABLE `tt_ntd`
-  MODIFY `id_tt_ntd` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tt_ntd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tt_thanh_vien`
 --
 ALTER TABLE `tt_thanh_vien`
-  MODIFY `id_tv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `user_ntd`
 --
 ALTER TABLE `user_ntd`
-  MODIFY `id_ntd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ntd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `apply`
+--
+ALTER TABLE `apply`
+  ADD CONSTRAINT `apply_ibfk_1` FOREIGN KEY (`id_tv`) REFERENCES `tt_thanh_vien` (`id_tv`),
+  ADD CONSTRAINT `apply_ibfk_2` FOREIGN KEY (`id_tt`) REFERENCES `dang_tt` (`id_tt`);
 
 --
 -- Các ràng buộc cho bảng `chung_chi`
