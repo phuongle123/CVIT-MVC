@@ -45,17 +45,26 @@ class userModel extends Model
 			return true;
 		}
 	}
+	// function addTtThanhVien($ho_ten,$ngay_sinh,$gioi_tinh,$phone,$website,$quoc_tich,$mo_ta_ngan,$id_user,$ten_chuyen_nganh,$ten_tinh){
+		
+	// 	$sql = "INSERT INTO tt_ntd VALUES ('".$ten_cong_ty."','".$dia_chi."','".$sdt."','".$id_ntd."','') ";
+	// 	if(!$this->conn->query($sql)){
+	// 		return false;
+	// 	} else {
+	// 		return true;
+	// 	}
+	// }
+	// function addthanhvien($id_user ,$ho_ten, $ngay_sinh, $gioi_tinh, $phone, $website, $quoc_tich, $mo_ta_ngan, $id_tinh, $id_chuyen_nganh){
+	// 	$sql = "INSERT INTO user VALUES ('',".$id_user."','".$ho_ten."','".$ngay_sinh."','".$gioi_tinh."','".$phone."','".$wedsite."', '".$quoc_tich."','".$mo_ta_ngan."','".$ten_tinh."','".$ten_chuyen_nganh."')";
+	// 	if(!$this->conn->query($sql)){
+	// 		return false;
+	// 	} else {
+	// 		return true;
+	// 	}
+	// }
 	function addTtThanhVien($ho_ten,$ngay_sinh,$gioi_tinh,$phone,$website,$quoc_tich,$mo_ta_ngan,$id_user,$ten_chuyen_nganh,$ten_tinh){
 		
-		$sql = "INSERT INTO tt_ntd VALUES ('".$ten_cong_ty."','".$dia_chi."','".$sdt."','".$id_ntd."','') ";
-		if(!$this->conn->query($sql)){
-			return false;
-		} else {
-			return true;
-		}
-	}
-	function addthanhvien($id_user ,$ho_ten, $ngay_sinh, $gioi_tinh, $phone, $website, $quoc_tich, $mo_ta_ngan, $id_tinh, $id_chuyen_nganh){
-		$sql = "INSERT INTO user VALUES ('',".$id_user."','".$ho_ten."','".$ngay_sinh."','".$gioi_tinh."','".$phone."','".$wedsite."', '".$quoc_tich."','".$mo_ta_ngan."','".$ten_tinh."','".$ten_chuyen_nganh."')";
+		$sql = "INSERT INTO tt_thanh_vien VALUES ('','".$ho_ten."','".$ngay_sinh."','".$gioi_tinh."','".$phone."','".$website."', '".$quoc_tich."','','".$mo_ta_ngan."','".$id_user."','".$ten_chuyen_nganh."','".$ten_tinh."') ";
 		if(!$this->conn->query($sql)){
 			return false;
 		} else {

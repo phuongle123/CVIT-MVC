@@ -79,33 +79,33 @@ class UserController extends Controller
 		if(isset($_POST['quoc_tich'])){
 			$quoc_tich = $_POST['quoc_tich'];
 		}
-		
 		require_once 'vendor/Model.php';
 		require_once 'models/users/userModel.php';
 		$md = new userModel;
 
 			if(($md->adduser($email,$pass))){ 
 				$_SESSION['user']=$md->getUserByEmail($email);
-				var_dump($_SESSION['user']);
+				//var_dump($_SESSION['user']);
 				$id_user = $_SESSION['user']['id_user'];
+
+				//echo $id_user;
 				if ($md->addTtThanhVien($ho_ten,$ngay_sinh,$gioi_tinh,$phone,$website,$quoc_tich,$mo_ta_ngan,$id_user,$ten_chuyen_nganh,$ten_tinh)) {
-				// 	echo'<script language="javascript">
-	   //                      alert("Đăng ký thành công!")
-	   //                  </script>';
-				// header('Refresh:0; url=../');
-				// } else {
-				// 	echo'<script language="javascript">
-	   //                      alert("Đăng ký không thành công, vui lòng xem lại!")
-	   //                  </script>';
-	   //       	header('Refresh:0; url=../');
-				// }
+					echo'<script language="javascript">
+	                        alert("Đăng ký thành công!")
+	                    </script>';
+				header('Refresh:0; url=../');
+				} else {
+					echo'<script language="javascript">
+	                        alert("Đăng ký không thành công, vui lòng xem lại!")
+	                    </script>';
+	         	header('Refresh:0; url=../');
+				}
 				return true;
 			} else {
 				echo "Đã có lỗi trong quá trình tạo tài khoản, vui lòng thử lại sau!";
 				return false;
 			}
 	}
-}
 	function viewinfo($id_tv)
 	{
 		require_once 'vendor/Model.php';
