@@ -22,7 +22,7 @@ class taocvModel extends Model
 	}
 	function chungchi($time, $ten_chung_chi,$id_tv){
 		
-		$sql = "INSERT INTO chung_chi  VALUES ('','".$time."','".$ten_chung_chi."','".$id_tv."')";
+		$sql = "INSERT INTO chung_chi  VALUES ('','".$ten_chung_chi."','".$time."','".$id_tv."')";
 		if(!$this->conn->query($sql)){
 			return false;
 		} else {

@@ -169,15 +169,16 @@
 
                 <div class="item">
                     <div class="meta">
-                        <div class="upper-row">
-                             <?php
+                        <?php
                                 for ($i=0; $i < count($data[2]); $i++) {
                                  ?>
+                        <div class="upper-row">
+                             
                             <h3 class="job-title"><?php echo $data[2][$i]['ten_chung_chi'] ?></h3>
                             <div class="time"><?php echo $data[2][$i]['time'] ?></div>
-                        <?php } ?>
+                       
                         </div><!--//upper-row-->
-
+                         <?php } ?>
                     </div><!--//meta-->
                 </div><!--//item-->
             </section>
@@ -185,15 +186,16 @@
                 <h2 class="section-title"><span class="icon-holder"><svg class="svg-inline--fa fa-briefcase fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="briefcase" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M320 288h192v144c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V288h192v20c0 6.627 5.373 12 12 12h104c6.627 0 12-5.373 12-12v-20zm192-112v80H0v-80c0-26.51 21.49-48 48-48h80V80c0-26.51 21.49-48 48-48h160c26.51 0 48 21.49 48 48v48h80c26.51 0 48 21.49 48 48zM320 96H192v32h128V96z"></path></svg><!-- <i class="fas fa-briefcase"></i> --></span>Giải thưởng</h2>
                 <div class="item">
                     <div class="meta">
-                        <div class="upper-row">
-                            <?php
+                        <?php
                                 for ($i=0; $i < count($data[3]); $i++) {
                                  ?>
+                        <div class="upper-row">
+                            
                             <h3 class="job-title"><?php echo $data[3][$i]['time'] ?></h3>
                             <div class="time"><?php echo $data[3][$i]['ten_giai_thuong'] ?></div>
-                        <?php } ?>
+                        
                         </div><!--//upper-row-->
-
+                        <?php } ?>
                     </div><!--//meta-->
                 </div>
             </section>
