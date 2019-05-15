@@ -84,9 +84,9 @@ class UserController extends Controller
 		$md = new userModel;
 
 			if(($md->adduser($email,$pass))){ 
-				$_SESSION['user']=$md->getUserByEmail($email);
+				$_SESSION['users']=$md->getUserByEmail($email);
 				//var_dump($_SESSION['user']);
-				$id_user = $_SESSION['user']['id_user'];
+				$id_user = $_SESSION['users']['id_user'];
 
 				//echo $id_user;
 				if ($md->addTtThanhVien($ho_ten,$ngay_sinh,$gioi_tinh,$phone,$website,$quoc_tich,$mo_ta_ngan,$id_user,$ten_chuyen_nganh,$ten_tinh)) {

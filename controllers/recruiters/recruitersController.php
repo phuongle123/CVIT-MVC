@@ -87,8 +87,8 @@ class RecruitersController extends Controller
 				return false;
 			}
 			if(($md->adduser($email,$pass))){ 
-				$_SESSION['recruiters']=$md->getRecruiterByEmail($email);
-				$id_ntd = $_SESSION['recruiters']['id_ntd'];
+				$_SESSION['recruiter']=$md->getRecruiterByEmail($email);
+				$id_ntd = $_SESSION['recruiter']['id_ntd'];
 				if ($md->addTtNtd($ten_cong_ty,$dia_chi,$sdt,$id_ntd)) {
 					echo'<script language="javascript">
 	                        alert("Đăng ký thành công!")
