@@ -40,6 +40,17 @@ footer.footer a.btn svg {
 	font-size: 16px;
 	line-height: 26px;
 }
+@media print {
+       body {
+          -webkit-print-color-adjust: exact;
+       }
+      	.no-print {
+      		display: none !important;
+      	}
+      	.resume-header a {
+      		text-decoration: none;
+      	}
+ }
 @media (max-width: 767.98px) {
 	.resume-header {
 		height: 35rem;

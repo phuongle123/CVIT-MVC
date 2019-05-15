@@ -13,7 +13,6 @@ class UserController extends Controller
 	
 	function login(){
 		
-		
 		require_once 'vendor/Model.php';
 		require_once 'models/users/userModel.php';
 		$md = new userModel;
@@ -40,6 +39,12 @@ class UserController extends Controller
                     </script>';
            header('Refresh:0; url=../'); 
 		}
+	}
+	function logout(){
+		session_unset();
+		session_destroy();
+		unset($_COOKIE['user']);
+		header('location: ../');
 	}
 	function register()
 	{
@@ -307,10 +312,13 @@ class UserController extends Controller
 		$data[] =$info->getKyNang();
 		$this->render('tao_cv',$data);
 	}
-	function logout(){
-		session_unset();
-		session_destroy();
-		unset($_COOKIE['user']);
-		header('location: ../');
+	function applyTt()
+	{
+		$truyenidtv = $_POST['truyenidtv'];
+		$truyenidtt = $_POST['truyenidtt'];
+		echo "<pre>";
+		var_dump($truyenidtv);
+		echo "</pre>";
 	}
+
 }

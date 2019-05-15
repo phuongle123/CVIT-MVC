@@ -24,6 +24,21 @@ img.profile {
 	height: 120px;
 	border-radius: 50%;
 }
+.sidebar-wrapper li.webstie a {
+	word-break: break-all;
+    width: 85% !important;
+}
+@media print {
+       body {
+          -webkit-print-color-adjust: exact;
+       }
+      	.no-print {
+      		display: none !important;
+      	}
+      	.sidebar-wrapper a {
+      		text-decoration: none;
+      	}
+ }
 @media (max-width: 767.98px) {
 	.sidebar-wrapper {
 		height: auto;

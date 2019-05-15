@@ -29,6 +29,8 @@
 								</p> 
 								<hr>
 								<div class="col-sm-12 text-center py-1">
+									<p hidden class="truyenidtv" name="truyenidtv"><?php echo $_SESSION['user']['id_tv'] ;  ?></p>
+									<p hidden class="truyenidtt" name="truyenidtt"><?php echo $data[0][$i]['id_tt'] ?></p>
 									<span>Bạn đã sẵn sàng apply chưa?</span>
 									<a class="btn btn-primary button btn-block btneditinfontd btnclick btnapply" >Apply</a>
 								</div> <!-- end button edit info -->
@@ -111,4 +113,16 @@
 				</div>  <!-- end container -->
 			</div> <!-- end nd-chinh -->
 		</main> <!-- main -->
+		<script>
+			//$('.btnapply').click(function() {
+				
+			//	$.post('user/applyTt', {
+			//		truyenidtv: $('p.truyenidtv').text(),
+			//		truyenidtt : $('p.truyenidtt').text()
+			//	}, function(data, textStatus, xhr) {
+			//		/*optional stuff to do after success */
+			//		alert('Bạn đã apply tin "'.+$('h3.td').text()+'" thành công!'+ $('p.truyenidtv').text() + $('p.truyenidtt').text());
+			//	});
+			//})
+		</script>
 <?php include "footer.php"; ?>

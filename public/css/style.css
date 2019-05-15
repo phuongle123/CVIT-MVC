@@ -306,6 +306,7 @@ a.logo {
     margin-left: 15px;
     text-transform: uppercase;
     transition: 0.4s;
+    cursor: pointer;
 }
 .header-right i {
     margin-right: 5px;
